@@ -4,7 +4,7 @@ namespace Clases.Practica_1
 {
     public class Numero : Comparable
     {
-        public sbyte valor { get; set; }
+        private sbyte valor;
 
         public Numero(sbyte num)
         {
@@ -16,7 +16,7 @@ namespace Clases.Practica_1
             if (otro is Numero number)
             {
                 number = (Numero)otro;
-                return number.valor == this.valor;
+                return number.VALOR == this.valor;
             }
             return false;
         }
@@ -26,7 +26,7 @@ namespace Clases.Practica_1
             if (otro is Numero)
             {
                 Numero num = (Numero)otro;
-                return (num.valor < this.valor);
+                return (num.VALOR < this.valor);
             }
             return false;
         }
@@ -36,11 +36,21 @@ namespace Clases.Practica_1
             if (otro is Numero)
             {
                 Numero num = (Numero)otro;
-                return num.valor < this.valor;
+                return num.VALOR < this.valor;
             }
             return false;
         }
         
-        
+        public sbyte VALOR
+        {
+            get
+            {
+                return this.valor;
+            }
+            set 
+            {
+                this.valor = value;
+            }
+        }
     }
 }
