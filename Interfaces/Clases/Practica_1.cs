@@ -6,10 +6,7 @@ namespace Clases.Practica_1
     {
         private sbyte valor;
 
-        public Numero(sbyte num)
-        {
-            this.valor = num;
-        }
+        public Numero(sbyte num) { this.valor = num; }
 
         public bool sosIgual(Comparable otro)
         {
@@ -43,14 +40,8 @@ namespace Clases.Practica_1
         
         public sbyte VALOR
         {
-            get
-            {
-                return this.valor;
-            }
-            set 
-            {
-                this.valor = value;
-            }
+            get{ return this.valor; }
+            set{ this.valor = value; }
         }
     }
 }
