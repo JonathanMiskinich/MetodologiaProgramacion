@@ -1,5 +1,5 @@
 /*Impletación de diferentes interfaces de la práctica 1*/
-namespace Practica1
+namespace Interfaces_Practica1
 {
     public interface Comparable
     {

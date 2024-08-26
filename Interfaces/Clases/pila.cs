@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Practica1;
+using Interfaces_Practica1;
 
 namespace Clases.Pila
 {

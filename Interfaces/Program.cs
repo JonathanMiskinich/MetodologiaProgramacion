@@ -1,6 +1,6 @@
 ﻿using Clases.Practica_1;
 using Clases.Pila;
-using Practica1;
+using Interfaces_Practica1;
 
 namespace Program
 {
