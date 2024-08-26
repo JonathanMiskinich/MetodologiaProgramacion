@@ -47,7 +47,7 @@ namespace Clases.Pila
                 puntero++;
             }
         }
-        public T DesApilar(T elemento)
+        public T DesApilar()
         {
             T elementoDeLaPila = elementosPila[0];
 
@@ -77,25 +77,29 @@ namespace Clases.Pila
         }
         public void Limpiar()
         {
+            puntero = 0;
             elementosPila.RemoveRange(0, elementosPila.Count);
         }
 
         // metodos Coleccionable
         public int Cuantos()
         {
+            //return this.elementosPila.Count;
             return this.puntero;
         }
 
         public T Minimo()
         {
-            this.elementosPila.Sort();
-            return this.elementosPila[0];
+            List<T> lista = new List<T>(elementosPila);
+            lista.Sort();
+            return lista[0];
         }
 
         public T Maximo()
         {
-            this.elementosPila.Sort();
-            return this.elementosPila[elementosPila.Count - 1];
+            List<T> lista = new List<T>(elementosPila);
+            lista.Sort();
+            return lista[lista.Count - 1];
         }
         public void Agregar(Comparable elemento)
         {

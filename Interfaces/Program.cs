@@ -45,6 +45,25 @@ namespace Program
 
             Console.WriteLine("El numero minimo es: {0}", numerosPila.Minimo());
             Console.WriteLine("El numero maximo es: {0}", numerosPila.Maximo());
+
+            numerosPila.DesApilar();
+            numerosPila.DesApilar();
+            
+            Console.WriteLine("El numero minimo es: {0}", numerosPila.Minimo());
+            Console.WriteLine("El numero maximo es: {0}", numerosPila.Maximo());
+
+            Console.WriteLine(numerosPila.Top());
+            Console.WriteLine("La cantidad de elementos es de: {0}", numerosPila.Cuantos());
+            numerosPila.Limpiar();
+            try
+            {
+                Console.WriteLine(numerosPila.Top());
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine();
+            }
+            Console.WriteLine("La cantidad de elementos es de: {0}", numerosPila.Cuantos());
         }
     }
 }
