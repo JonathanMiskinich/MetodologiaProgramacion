@@ -1,4 +1,6 @@
 ﻿using Clases.Practica_1;
+using Clases.Pila;
+using Practica1;
 
 namespace Program
 {
@@ -6,16 +8,43 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Numero num = new Numero(10);
-            Numero num1 = new Numero(10);
-            Numero num2 = new Numero(3);
+            Pila<Comparable> numeros = new Pila<Comparable>(5);
 
-            Console.WriteLine(num.sosIgual(num1));
-            Console.WriteLine(num.sosIgual(num2));
-            Console.WriteLine(num.sosMayor(num2));
-            Console.WriteLine(num.sosMenor(num2));
+            Numero num0 = new Numero(3);
+            Numero num1 = new Numero(34);
+            Numero num2 = new(10);
+            Numero num3 = new Numero(32);
+            Numero num4 = new Numero(31);
+            Numero num5 = new Numero(8);
 
-            Console.WriteLine(num2.sosMenor(num));
+            Numero[] numerosArray = {num0, num1, num2, num3, num4, num5};
+
+            for (int i = 0; i < 6; i++)
+            {
+                try
+                {
+                    numeros.Agregar(numerosArray[i]);
+                    Console.WriteLine("El número {0} fue agregado.", numerosArray[i].VALOR);
+                }
+                catch (PilaLLenaException)
+                {
+                    Console.WriteLine("No se puede agregar. Pila llena.");
+                }
+                catch (System.Exception)
+                {
+                    Console.WriteLine("");
+                }
+            }
+
+            Pila<int> numerosPila = new();
+            numerosPila.Apilar(5);
+            numerosPila.Apilar(7);
+            numerosPila.Apilar(87);
+            numerosPila.Apilar(2);
+            numerosPila.Apilar(3245);
+
+            Console.WriteLine("El numero minimo es: {0}", numerosPila.Minimo());
+            Console.WriteLine("El numero maximo es: {0}", numerosPila.Maximo());
         }
     }
 }

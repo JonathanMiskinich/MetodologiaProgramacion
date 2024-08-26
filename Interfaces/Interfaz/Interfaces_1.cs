@@ -8,4 +8,13 @@ namespace Practica1
         public bool sosMayor(Comparable comparacion);
 
     }
+
+    public interface Coleccionable<T>
+    {
+        public int Cuantos();
+        public T Minimo();
+        public T Maximo();
+        public void Agregar(Comparable elemento);
+        public bool Contiene(Comparable elemento);
+    }
 }
