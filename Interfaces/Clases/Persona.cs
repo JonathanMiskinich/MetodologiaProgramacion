@@ -1,6 +1,6 @@
 using Interfaces_Practica1;
 
-namespace Clases.Persona
+namespace Interfaces.Clases.Persona
 {
     public class Persona : Comparable
     {
@@ -23,7 +23,7 @@ namespace Clases.Persona
             get { return this.dni;}
         }
         //Metodos Comparable
-        public bool sosIgual(Comparable comparacion)
+        public virtual bool sosIgual(Comparable comparacion)
         {
             if (comparacion is Persona)
             {
@@ -33,7 +33,7 @@ namespace Clases.Persona
 
             return false;
         }
-        public bool sosMenor(Comparable comparacion)
+        public virtual bool sosMenor(Comparable comparacion)
         {
             if (comparacion is Persona)
             {
@@ -42,7 +42,7 @@ namespace Clases.Persona
             }
             return false;
         }
-        public bool sosMayor(Comparable comparacion)
+        public virtual bool sosMayor(Comparable comparacion)
         {
             if (comparacion is Persona)
             {

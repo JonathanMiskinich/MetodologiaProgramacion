@@ -1,6 +1,7 @@
 using Interfaces_Practica1;
 using Clases.Numero;
-using Clases.Persona;
+using Interfaces.Clases.Persona;
+using Clases.Alumno;
 
 namespace Funciones
 {
@@ -39,6 +40,15 @@ namespace Funciones
             {
                 Persona p = new Persona(NombreAzar(), i);
                 lista.Agregar(p);
+            }
+        }
+
+        public static void LlenarAlumnos(Coleccionable coleccionable)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Alumno alum = new Alumno(NombreAzar(), i, i, (float)new Random().Next(11));
+                coleccionable.Agregar(alum);
             }
         }
     }

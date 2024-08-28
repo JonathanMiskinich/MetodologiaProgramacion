@@ -1,8 +1,5 @@
-﻿using Clases.Numero;
-using Clases.Pila;
+﻿using Clases.Pila;
 using Clases.Cola;
-using Clases.Persona;
-using Interfaces_Practica1;
 using Funciones;
 
 namespace Program
@@ -12,11 +9,11 @@ namespace Program
         static void Main(string[] args)
         {
             Pila p = new Pila();
-            Helper.LlenarPersonas(p);
+            Helper.LlenarAlumnos(p);
             Helper.Informar(p);
 
             Cola c = new Cola();
-            Helper.LlenarPersonas(c);
+            Helper.LlenarAlumnos(c);
             Helper.Informar(c);
         }
     }
