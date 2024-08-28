@@ -34,7 +34,7 @@ namespace Clases.Numero
             if (otro is Numero)
             {
                 Numero num = (Numero)otro;
-                return num.VALOR < this.valor;
+                return num.VALOR > this.valor;
             }
             return false;
         }
@@ -43,6 +43,12 @@ namespace Clases.Numero
         {
             get{ return this.valor; }
             set{ this.valor = value; }
+        }
+
+        //reesxribiendo el metodo ToString()
+        public override string ToString()
+        {
+            return $"{this.valor}";
         }
     }
 }

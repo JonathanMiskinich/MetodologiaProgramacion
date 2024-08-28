@@ -1,7 +1,7 @@
 using System;
 using Interfaces_Practica1;
 
-namespace Cola
+namespace Clases.Cola
 {
     public class Cola : Coleccionable
     {
@@ -62,15 +62,35 @@ namespace Cola
         }
         public Comparable Minimo()
         {
-            List<Comparable> lista = new List<Comparable>(elementosCola);
-            lista.Sort();
-            return lista.First();
+            Comparable valorMinimo = null;
+            foreach (Comparable item in this.elementosCola)
+            {
+                if (valorMinimo == null)
+                    valorMinimo = item;
+                else
+                {
+                    if (valorMinimo.sosMenor(item))
+                        valorMinimo = item;
+                }
+            }
+
+            return valorMinimo;
         }
         public Comparable Maximo()
         {
-            List<Comparable> lista = new List<Comparable>(elementosCola);
-            lista.Sort();
-            return lista.Last();
+            Comparable valorMaximo = null;
+            foreach (Comparable item in this.elementosCola)
+            {
+                if (valorMaximo == null)
+                    valorMaximo = item;
+                else
+                {
+                    if (valorMaximo.sosMayor(item))
+                        valorMaximo = item;
+                }
+            }
+
+            return valorMaximo;
         }
         public void Agregar(Comparable elemento)
         {

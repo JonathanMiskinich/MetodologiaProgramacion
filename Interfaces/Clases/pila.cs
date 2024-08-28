@@ -82,16 +82,36 @@ namespace Clases.Pila
 
         public Comparable Minimo()
         {
-            List<Comparable> lista = new List<Comparable>(elementosPila);
-            lista.Sort();
-            return lista[0];
+            Comparable valorMinimo = null;
+            foreach (Comparable item in this.elementosPila)
+            {
+                if (valorMinimo == null)
+                    valorMinimo = item;
+                else
+                {
+                    if (valorMinimo.sosMenor(item))
+                        valorMinimo = item;
+                }
+            }
+            
+            return valorMinimo;
         }
 
         public Comparable Maximo()
         {
-            List<Comparable> lista = new List<Comparable>(elementosPila);
-            lista.Sort();
-            return lista[lista.Count - 1];
+            Comparable maximo = null;
+            foreach (Comparable item in this.elementosPila)
+            {
+                if (maximo == null)
+                    maximo = item;
+                else
+                {
+                    if (maximo.sosMayor(item))
+                        maximo = item;
+                }
+            }
+            
+            return maximo;
         }
         public void Agregar(Comparable elemento)
         {
