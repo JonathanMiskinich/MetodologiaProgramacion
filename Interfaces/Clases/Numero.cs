@@ -1,7 +1,7 @@
 using Interfaces_Practica1;
 using System.Collections.Generic;
 
-namespace Clases.Practica_1
+namespace Clases.Numero
 {
     public class Numero : Comparable
     {

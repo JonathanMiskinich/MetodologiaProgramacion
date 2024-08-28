@@ -9,11 +9,11 @@ namespace Interfaces_Practica1
 
     }
 
-    public interface Coleccionable<T>
+    public interface Coleccionable
     {
         public int Cuantos();
-        public T Minimo();
-        public T Maximo();
+        public Comparable Minimo();
+        public Comparable Maximo();
         public void Agregar(Comparable elemento);
         public bool Contiene(Comparable elemento);
     }

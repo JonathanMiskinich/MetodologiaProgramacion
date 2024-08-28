@@ -3,16 +3,16 @@ using Interfaces_Practica1;
 
 namespace Cola
 {
-    public class Cola<T> : Coleccionable<T>
+    public class Cola : Coleccionable
     {
-        private List<T> elementosCola;
-        private byte tamanioCola;
+        private List<Comparable> elementosCola;
+        private byte? tamanioCola = null;
         
         // Constructor
         public Cola(byte tamanioCola)
         {
             this.tamanioCola = tamanioCola;
-            this.elementosCola = new List<T>(tamanioCola);
+            this.elementosCola = new List<Comparable>(tamanioCola);
         }
         public Cola()
         {
@@ -20,25 +20,82 @@ namespace Cola
         }
         
         //Getters and Setters
-        public byte GetTamanioCola() { return this.tamanioCola; }
-        public List<T> GetCola() { return this.elementosCola; }
+        public byte? GetTamanioCola() { return this.tamanioCola; }
+        public List<Comparable> GetCola() { return this.elementosCola; }
 
         //Metodos
-        public void Encolar(T elemento) 
+        public void Encolar(Comparable elemento) 
         {
             this.elementosCola.Append(elemento);
         }
-        public T DesEncolar() 
+        public Comparable DesEncolar() 
         {
-            T elementoSacar = elementosCola[elementosCola.Count - 1];
-            elementosCola.RemoveAt(elementosCola.Count - 1);
+            Comparable elementoSacar = elementosCola[0];
+            elementosCola.RemoveAt(0);
             return elementoSacar; 
         }
-        public T Frente() {}
-        public bool EsVacia() {}
-        public bool EstaLlena() {}
-        public byte CantidadElementos() {}
-        public void Limpiar() {}
+        public Comparable Frente() 
+        {
+            return elementosCola[0];
+        }
+        public bool EsVacia() 
+        {
+            return this.elementosCola.Count == 0;
+        }
+        public bool EstaLlena() 
+        {
+            return this.elementosCola.Count == this.tamanioCola;
+        }
+        public byte CantidadElementos() 
+        {
+            return (byte)this.elementosCola.Count;
+        }
+        public void Limpiar() 
+        {
+            this.elementosCola.Clear();
+        }
+
+        // Implementacion interfaces
+        public int Cuantos()
+        {
+            return elementosCola.Count;
+        }
+        public Comparable Minimo()
+        {
+            List<Comparable> lista = new List<Comparable>(elementosCola);
+            lista.Sort();
+            return lista.First();
+        }
+        public Comparable Maximo()
+        {
+            List<Comparable> lista = new List<Comparable>(elementosCola);
+            lista.Sort();
+            return lista.Last();
+        }
+        public void Agregar(Comparable elemento)
+        {
+            if (this.tamanioCola != null)
+            {
+                if (elementosCola.Count < this.tamanioCola)
+                {
+                    elementosCola.Add(elemento);
+                }else
+                {
+                    throw new ColaLLenaException("La cola esta llena.");
+                }
+            }else 
+            {
+                elementosCola.Add(elemento);
+            }
+        }
+        public bool Contiene(Comparable elemento)
+        {
+            return elementosCola.Contains(elemento);
+        }
 
     }
+    public class ColaLLenaException : Exception{
+        public ColaLLenaException(){}
+        public ColaLLenaException(string message) : base(message){}
+    };
 }

@@ -1,4 +1,4 @@
-﻿using Clases.Practica_1;
+﻿using Clases.Numero;
 using Clases.Pila;
 using Interfaces_Practica1;
 
@@ -8,7 +8,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Pila<Comparable> numeros = new Pila<Comparable>(5);
+            Pila numeros = new Pila(5);
 
             Numero num0 = new Numero(3);
             Numero num1 = new Numero(34);
@@ -36,12 +36,12 @@ namespace Program
                 }
             }
 
-            Pila<int> numerosPila = new();
-            numerosPila.Apilar(5);
-            numerosPila.Apilar(7);
-            numerosPila.Apilar(87);
-            numerosPila.Apilar(2);
-            numerosPila.Apilar(3245);
+            Pila numerosPila = new();
+            // numerosPila.Apilar(5);
+            // numerosPila.Apilar(7);
+            // numerosPila.Apilar(87);
+            // numerosPila.Apilar(2);
+            // numerosPila.Apilar(3245);
 
             Console.WriteLine("El numero minimo es: {0}", numerosPila.Minimo());
             Console.WriteLine("El numero maximo es: {0}", numerosPila.Maximo());
