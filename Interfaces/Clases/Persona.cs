@@ -22,7 +22,6 @@ namespace Clases.Persona
         {
             get { return this.dni;}
         }
-        
         //Metodos Comparable
         public bool sosIgual(Comparable comparacion)
         {
@@ -52,6 +51,11 @@ namespace Clases.Persona
             }
 
             return false;
+        }
+
+        public override string ToString()
+        {
+            return "Nombre: " + this.nombre + "\nDni: " + this.dni;
         }
     }
 }
