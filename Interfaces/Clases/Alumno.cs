@@ -8,7 +8,7 @@ namespace Clases.Alumno
     {
         private int legajo;
         private float promedio;
-        private Comparacion metodoComparar = null;
+        private Comparacion? metodoComparar = null;
 
         public Alumno(string nombre, int dni, int legajo, float promedio) : base(nombre, dni)
         {
@@ -29,6 +29,10 @@ namespace Clases.Alumno
             this.metodoComparar = comparar;
         }
 
+        public bool Comparacion(Alumno alum)
+        {
+            return metodoComparar.ComparacionIguales(this, alum);
+        }
         public override bool sosIgual(Comparable comparacion)
         {
             if (comparacion is Alumno)
