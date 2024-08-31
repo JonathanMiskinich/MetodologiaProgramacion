@@ -1,6 +1,5 @@
-﻿using Clases.Pila;
-using Clases.Cola;
-using Funciones;
+﻿using Clases.Alumno;
+using Interfaces.PStrategy_Comparacion;
 
 namespace Program
 {
@@ -8,13 +7,22 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Pila p = new Pila();
-            Helper.LlenarAlumnos(p);
-            Helper.Informar(p);
+            Alumno a = new Alumno("Juan", 1,1,10);
+            a.setMetodoComparar(new ComparacionPromedio());
 
-            Cola c = new Cola();
-            Helper.LlenarAlumnos(c);
-            Helper.Informar(c);
+            Alumno alum2 = new("Pablo", 10,1,10);
+
+            Console.WriteLine("Comparacion por promedio: " + a.Comparacion(alum2));
+
+            a.setMetodoComparar(new ComparacionDni());
+            Console.WriteLine("Comparacion por DNi: " + a.Comparacion(alum2));
+
+            a.setMetodoComparar(new ComparacionNombre());
+            Console.WriteLine("Comparacion por Nombre: " + a.Comparacion(alum2));
+
+            a.setMetodoComparar(new ComparacionLegajo());
+            Console.WriteLine("Comparacion por Legajo: " + a.Comparacion(alum2));
+
         }
     }
 }
