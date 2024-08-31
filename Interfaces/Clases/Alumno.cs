@@ -1,5 +1,6 @@
 using Interfaces.Clases.Persona;
 using Interfaces_Practica1;
+using Interfaces.PStrategy_Comparacion;
 
 namespace Clases.Alumno
 {
@@ -7,6 +8,7 @@ namespace Clases.Alumno
     {
         private int legajo;
         private float promedio;
+        private Comparacion metodoComparar = null;
 
         public Alumno(string nombre, int dni, int legajo, float promedio) : base(nombre, dni)
         {
@@ -21,6 +23,10 @@ namespace Clases.Alumno
         public float getPromedio
         {
             get { return this.promedio; }
+        }
+        public void setMetodoComparar(Comparacion comparar)
+        {
+            this.metodoComparar = comparar;
         }
 
         public override bool sosIgual(Comparable comparacion)
