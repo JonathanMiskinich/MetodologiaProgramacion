@@ -1,4 +1,6 @@
+using System.Dynamic;
 using Interfaces_Practica1;
+using PIterator;
 
 namespace Clases.Conjunto
 {
@@ -9,7 +11,13 @@ namespace Clases.Conjunto
         {
             elementos = new List<Comparable>();
         }
-
+        // Getters and setters
+        public List<Comparable> GetLista { get{return this.elementos; } }
+        // Iterador
+        public IIterator CrearIterador()
+        {
+            return new IteradorConjunto(this);
+        }
         public int Cuantos()
         {
             return elementos.Count;
@@ -57,5 +65,7 @@ namespace Clases.Conjunto
         {
             return elementos.Contains(elemento);
         }
+
+        
     }
 }
