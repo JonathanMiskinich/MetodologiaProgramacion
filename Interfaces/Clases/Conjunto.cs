@@ -17,7 +17,7 @@ namespace Clases.Conjunto
         public Comparable Minimo()
         {
             Comparable valorMinimo = null;
-            foreach (Comparable item in this.elementosCola)
+            foreach (Comparable item in this.elementos)
             {
                 if (valorMinimo == null)
                     valorMinimo = item;
@@ -32,14 +32,14 @@ namespace Clases.Conjunto
         }
         public Comparable Maximo()
         {
-            Comparable valorMaximo = null
+            Comparable valorMaximo = null;
             foreach (Comparable item in elementos)
             {
                 if (valorMaximo == null)
                     valorMaximo = item;
                 else
                 {
-                    if (valoMaximo.sosMayor(item))
+                    if (valorMaximo.sosMayor(item))
                         valorMaximo = item;
                 }
             }
