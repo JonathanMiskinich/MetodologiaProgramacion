@@ -1,7 +1,9 @@
 ﻿using Clases.Diccionario;
-using Clases.Numero;
-using Clases.Clave_Valor;
-using PIterator;
+using Funciones;
+using Clases.Cola;
+using Clases.Pila;
+using Clases.Conjunto;
+using Interfaces.PStrategy_Comparacion;
 
 namespace Program
 {
@@ -9,21 +11,27 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Diccionario conjunto = new();
-            conjunto.Agregar(new Numero(34), "HOla");
-            conjunto.Agregar(new Numero(2), "Juan");
-            conjunto.Agregar(new Numero(12), "Muerte");
-            conjunto.Agregar(new Numero(34), "Boquita");
+           ComparacionDni compDni = new();
+           ComparacionLegajo compLegajo = new();
+           ComparacionNombre compNombre = new();
+           ComparacionPromedio compPromedio = new();
 
-            IIterator iterador = conjunto.CrearIterador();
-            iterador.Primero();
+           Pila p = new();
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compDni);
+           Console.WriteLine("OK");
 
-            while (!iterador.Fin())
-            {
-                Console.WriteLine(iterador.Actual().ToString());
-                iterador.Siguiente();
-            }
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compLegajo);
+           Console.WriteLine("OK");
 
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compNombre);
+           Console.WriteLine("OK");
+
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compPromedio);
+           Console.WriteLine("OK");
         }
     }
 }

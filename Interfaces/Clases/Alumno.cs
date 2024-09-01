@@ -8,14 +8,15 @@ namespace Clases.Alumno
     {
         private int legajo;
         private float promedio;
-        private Comparacion? metodoComparar = null;
+        private Comparacion metodoComparar;
 
+        //COnstructores
         public Alumno(string nombre, int dni, int legajo, float promedio) : base(nombre, dni)
         {
             this.legajo = legajo;
             this.promedio = promedio;
         }
-
+        // Getters and Setters
         public int getLegajo
         {
             get {return this.legajo;}
@@ -24,6 +25,7 @@ namespace Clases.Alumno
         {
             get { return this.promedio; }
         }
+        //Strategy
         public void setMetodoComparar(Comparacion comparar)
         {
             this.metodoComparar = comparar;
@@ -33,6 +35,7 @@ namespace Clases.Alumno
         {
             return metodoComparar.ComparacionIguales(this, alum);
         }
+        //Interfaces
         public override bool sosIgual(Comparable comparacion)
         {
             if (comparacion is Alumno)
