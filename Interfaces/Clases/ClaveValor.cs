@@ -31,13 +31,14 @@ namespace Clases.Clave_Valor
         // Metodos de la interfaz
         public bool sosIgual(Comparable claveUser)
         {
-            if (claveUser is ClaveValor)
-            {
-                ClaveValor auxiliar = (ClaveValor)claveUser;
-                return auxiliar.getClave == this.clave;
-            }
+            if (claveUser is Comparable)
+                return claveUser.sosIgual(this.clave);
             return false;
         }
         
+        public override string ToString()
+        {
+            return $"Clave: {this.clave}\nValor: {this.value}";
+        }
     }
 }

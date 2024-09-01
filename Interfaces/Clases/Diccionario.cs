@@ -1,6 +1,6 @@
 using Clases.Clave_Valor;
 using Interfaces_Practica1;
-using Clases.Numero;
+using PIterator;
 
 namespace Clases.Diccionario
 {
@@ -20,7 +20,11 @@ namespace Clases.Diccionario
         {
             get { return this.listaElementos; }
         }
-
+        //iterador
+        public IIterator CrearIterador()
+        {
+            return new IteradorDiccionario(this);
+        }
         //Metodos de la clase
         public void Agregar(Comparable clave, object valor)
         {

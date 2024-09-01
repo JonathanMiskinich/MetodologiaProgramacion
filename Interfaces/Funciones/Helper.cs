@@ -2,6 +2,7 @@ using Interfaces_Practica1;
 using Clases.Numero;
 using Interfaces.Clases.Persona;
 using Clases.Alumno;
+using PIterator;
 
 namespace Funciones
 {
