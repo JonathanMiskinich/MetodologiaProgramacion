@@ -1,4 +1,8 @@
-﻿using Clases.Alumno;
+﻿using Clases.Diccionario;
+using Funciones;
+using Clases.Cola;
+using Clases.Pila;
+using Clases.Conjunto;
 using Interfaces.PStrategy_Comparacion;
 
 namespace Program
@@ -7,22 +11,27 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Alumno a = new Alumno("Juan", 1,1,10);
-            a.setMetodoComparar(new ComparacionPromedio());
+           ComparacionDni compDni = new();
+           ComparacionLegajo compLegajo = new();
+           ComparacionNombre compNombre = new();
+           ComparacionPromedio compPromedio = new();
 
-            Alumno alum2 = new("Pablo", 10,1,10);
+           Pila p = new();
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compDni);
+           Console.WriteLine("OK");
 
-            Console.WriteLine("Comparacion por promedio: " + a.Comparacion(alum2));
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compLegajo);
+           Console.WriteLine("OK");
 
-            a.setMetodoComparar(new ComparacionDni());
-            Console.WriteLine("Comparacion por DNi: " + a.Comparacion(alum2));
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compNombre);
+           Console.WriteLine("OK");
 
-            a.setMetodoComparar(new ComparacionNombre());
-            Console.WriteLine("Comparacion por Nombre: " + a.Comparacion(alum2));
-
-            a.setMetodoComparar(new ComparacionLegajo());
-            Console.WriteLine("Comparacion por Legajo: " + a.Comparacion(alum2));
-
+           Helper.LlenarAlumnos(p);
+           Helper.CambiarEstrategia(p, compPromedio);
+           Console.WriteLine("OK");
         }
     }
 }

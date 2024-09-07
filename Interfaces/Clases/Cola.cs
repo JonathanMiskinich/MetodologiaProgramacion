@@ -1,5 +1,6 @@
 using System;
 using Interfaces_Practica1;
+using PIterator;
 
 namespace Clases.Cola
 {
@@ -21,12 +22,16 @@ namespace Clases.Cola
         
         //Getters and Setters
         public byte? GetTamanioCola() { return this.tamanioCola; }
-        public List<Comparable> GetCola() { return this.elementosCola; }
-
+        public List<Comparable> GetCola { get{ return this.elementosCola;} }
+        //Iterador
+        public IIterator CrearIterador()
+        {
+            return new IteradorCola(this);
+        }
         //Metodos
         public void Encolar(Comparable elemento) 
         {
-            this.elementosCola.Append(elemento);
+            this.elementosCola.Add(elemento);
         }
         public Comparable DesEncolar() 
         {

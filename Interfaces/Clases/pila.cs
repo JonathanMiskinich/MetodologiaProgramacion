@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Interfaces_Practica1;
+using PIterator;
 
 namespace Clases.Pila
 {
@@ -24,7 +25,15 @@ namespace Clases.Pila
 
         // Getters and Setters
         public int? getTamanio() { return this.tamanio; }
-
+        public List<Comparable> GetLista
+        {
+            get { return this.elementosPila; }
+        }
+        //Iterador
+        public IIterator CrearIterador()
+        {
+            return new IteradorPila(this);
+        }
         // Metodos
         public void Apilar(Comparable elemento)
         {
@@ -39,7 +48,7 @@ namespace Clases.Pila
                 }
             }else 
             {
-                elementosPila.Insert(0, elemento);
+                elementosPila.Add(elemento);
             }
         }
         public Comparable DesApilar()

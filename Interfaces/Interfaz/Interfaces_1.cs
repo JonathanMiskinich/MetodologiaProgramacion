@@ -1,4 +1,5 @@
 /*Impletación de diferentes interfaces de la práctica 1*/
+using PIterator;
 namespace Interfaces_Practica1
 {
     public interface Comparable
@@ -11,6 +12,7 @@ namespace Interfaces_Practica1
 
     public interface Coleccionable
     {
+        IIterator CrearIterador();
         public int Cuantos();
         public Comparable Minimo();
         public Comparable Maximo();

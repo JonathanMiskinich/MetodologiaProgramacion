@@ -2,6 +2,9 @@ using Interfaces_Practica1;
 using Clases.Numero;
 using Interfaces.Clases.Persona;
 using Clases.Alumno;
+using PIterator;
+using Interfaces.PStrategy_Comparacion;
+
 
 namespace Funciones
 {
@@ -49,6 +52,30 @@ namespace Funciones
             {
                 Alumno alum = new Alumno(NombreAzar(), i, i, (float)new Random().Next(11));
                 coleccionable.Agregar(alum);
+            }
+        }
+        public static void ImprimirElementos(Coleccionable coleccionable) 
+        {
+            IIterator iterador = coleccionable.CrearIterador();
+            iterador.Primero();
+
+            while (!iterador.Fin())
+            {
+                Console.WriteLine(iterador.Actual().ToString());
+                iterador.Siguiente();
+            }
+        }
+
+        public static void CambiarEstrategia(Coleccionable coleccionable, Comparacion estrategiaNueva)
+        {
+            IIterator iterador = coleccionable.CrearIterador();
+            iterador.Primero();
+
+            while (!iterador.Fin())
+            {
+                Alumno elem = (Alumno)iterador.Actual();
+                elem.setMetodoComparar(estrategiaNueva);
+                iterador.Siguiente();
             }
         }
     }

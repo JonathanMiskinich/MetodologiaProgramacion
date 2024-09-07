@@ -45,6 +45,10 @@ namespace Clases.Numero
             set{ this.valor = value; }
         }
 
+        public sbyte SetValor
+        {
+            set { this.valor = value;}
+        }
         //reesxribiendo el metodo ToString()
         public override string ToString()
         {
