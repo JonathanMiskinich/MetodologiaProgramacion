@@ -1,4 +1,4 @@
-﻿using Clases.DatosAzar;
+﻿using Clases.LectorDeDatos;
 
 namespace Program
 {
@@ -6,10 +6,8 @@ namespace Program
     {
         static void Main(string[] args)
         {
-        
-
-        string mensaje = GeneradorDatosAzar.StringAleatorio(10);
-        Console.WriteLine(mensaje);
+            Console.WriteLine(LectorDeDatos.NumeroPorTeclado());
+            Console.WriteLine(LectorDeDatos.StringPorTeclado());
         }
     }
 }
