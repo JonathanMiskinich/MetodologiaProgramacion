@@ -7,6 +7,7 @@ namespace PIterator
     {
         private List<Comparable> listaIterar; 
         private int posicionActual = 0;
+        
         public IteradorPila(Pila lista)
         {
             this.listaIterar = lista.GetLista;
