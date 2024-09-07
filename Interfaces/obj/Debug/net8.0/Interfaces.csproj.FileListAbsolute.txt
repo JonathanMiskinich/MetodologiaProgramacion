@@ -12,3 +12,4 @@ D:\Practicas-Facultad\Metodologia\Interfaces\obj\Debug\net8.0\refint\Interfaces.
 D:\Practicas-Facultad\Metodologia\Interfaces\obj\Debug\net8.0\Interfaces.pdb
 D:\Practicas-Facultad\Metodologia\Interfaces\obj\Debug\net8.0\Interfaces.genruntimeconfig.cache
 D:\Practicas-Facultad\Metodologia\Interfaces\obj\Debug\net8.0\ref\Interfaces.dll
+D:\Practicas-Facultad\Metodologia\Interfaces\obj\Debug\net8.0\Interfaces.sourcelink.json

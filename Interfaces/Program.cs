@@ -1,9 +1,4 @@
-﻿using Clases.Diccionario;
-using Funciones;
-using Clases.Cola;
-using Clases.Pila;
-using Clases.Conjunto;
-using Interfaces.PStrategy_Comparacion;
+﻿using Clases.DatosAzar;
 
 namespace Program
 {
@@ -11,27 +6,10 @@ namespace Program
     {
         static void Main(string[] args)
         {
-           ComparacionDni compDni = new();
-           ComparacionLegajo compLegajo = new();
-           ComparacionNombre compNombre = new();
-           ComparacionPromedio compPromedio = new();
+        
 
-           Pila p = new();
-           Helper.LlenarAlumnos(p);
-           Helper.CambiarEstrategia(p, compDni);
-           Console.WriteLine("OK");
-
-           Helper.LlenarAlumnos(p);
-           Helper.CambiarEstrategia(p, compLegajo);
-           Console.WriteLine("OK");
-
-           Helper.LlenarAlumnos(p);
-           Helper.CambiarEstrategia(p, compNombre);
-           Console.WriteLine("OK");
-
-           Helper.LlenarAlumnos(p);
-           Helper.CambiarEstrategia(p, compPromedio);
-           Console.WriteLine("OK");
+        string mensaje = GeneradorDatosAzar.StringAleatorio(10);
+        Console.WriteLine(mensaje);
         }
     }
 }
