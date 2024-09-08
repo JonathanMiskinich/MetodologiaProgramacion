@@ -1,15 +1,22 @@
-using PCreadorComparables;
-using Clases.Numero;
-using Clases.DatosAzar;
 using Interfaces_Practica1;
+using PFactoryMethod.CreadorComparables;
+using Clases.DatosAzar;
+using Clases.LectorDeDatos;
+using Funciones;
+using Clases.Numero;
 
-namespace PCreadorNumero
+namespace PFactoryMethod.CreadorNumero
 {
-    public class CreadorNumero : ComparableFactory
+    public class CreadorNumero : ICreadorComparable
     {
-        public override Comparable CreadorComparable()
+        public Comparable CrearAleatorio()
         {
             return new Numero((sbyte)GeneradorDatosAzar.NumeroAleatorio(128));
+        }
+
+        public Comparable CrearPorTeclado()
+        {
+            return new Numero((sbyte)LectorDeDatos.NumeroPorTeclado());
         }
     }
 }
