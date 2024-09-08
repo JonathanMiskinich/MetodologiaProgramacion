@@ -1,4 +1,9 @@
 ﻿using Clases.LectorDeDatos;
+using PCreadorComparables;
+using PCreadorNumero;
+using PCreadorAlumnos;
+using Clases.Numero;
+using Clases.Alumno;
 
 namespace Program
 {
@@ -6,8 +11,13 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(LectorDeDatos.NumeroPorTeclado());
-            Console.WriteLine(LectorDeDatos.StringPorTeclado());
+            ComparableFactory numeroFactory = new CreadorNumero();
+            ComparableFactory alumnoFactory = new CreadorAlumno();
+
+            Numero num = (Numero)numeroFactory.CreadorComparable();
+            Alumno alum = (Alumno)alumnoFactory.CreadorComparable();
+
+            Console.WriteLine(alum.ToString());
         }
     }
 }
