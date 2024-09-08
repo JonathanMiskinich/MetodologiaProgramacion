@@ -2,6 +2,6 @@ namespace PObserver.Suscriptora
 {
     public interface ISuscriptora
     {
-        public void Update();
+        public void Update(bool b);
     }
 }
