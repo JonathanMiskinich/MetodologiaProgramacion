@@ -1,4 +1,9 @@
-﻿using Clases.DatosAzar;
+﻿using Clases.LectorDeDatos;
+using PCreadorComparables;
+using PCreadorNumero;
+using PCreadorAlumnos;
+using Clases.Numero;
+using Clases.Alumno;
 
 namespace Program
 {
@@ -6,10 +11,13 @@ namespace Program
     {
         static void Main(string[] args)
         {
-        
+            ComparableFactory numeroFactory = new CreadorNumero();
+            ComparableFactory alumnoFactory = new CreadorAlumno();
 
-        string mensaje = GeneradorDatosAzar.StringAleatorio(10);
-        Console.WriteLine(mensaje);
+            Numero num = (Numero)numeroFactory.CreadorComparable();
+            Alumno alum = (Alumno)alumnoFactory.CreadorComparable();
+
+            Console.WriteLine(alum.ToString());
         }
     }
 }
