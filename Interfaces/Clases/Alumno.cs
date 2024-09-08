@@ -1,10 +1,11 @@
 using Interfaces.Clases.Persona;
 using Interfaces_Practica1;
 using Interfaces.PStrategy_Comparacion;
+using PObserver.Suscriptora;
 
 namespace Clases.Alumno
 {
-    public class Alumno : Persona
+    public class Alumno : Persona, ISuscriptora
     {
         private int legajo;
         private float promedio;
@@ -92,6 +93,11 @@ namespace Clases.Alumno
                     Console.WriteLine("Tirando un avion de papel.");
                     break;
             }
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }
