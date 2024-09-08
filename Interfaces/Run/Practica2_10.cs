@@ -1,11 +1,11 @@
+//Resolucion del ejercicio 10 de la practica 2.
 using Clases.Pila;
 using Funciones;
 using Interfaces.PStrategy_Comparacion;
 
-
-namespace Run
+namespace Practica2_10
 {
-    public class Run_Ejercicio10
+    public class Practica_2
     {
         public static void Run()
         {
