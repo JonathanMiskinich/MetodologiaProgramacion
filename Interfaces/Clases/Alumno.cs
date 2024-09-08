@@ -1,10 +1,11 @@
 using Interfaces.Clases.Persona;
 using Interfaces_Practica1;
 using Interfaces.PStrategy_Comparacion;
+using PObserver.Suscriptora;
 
 namespace Clases.Alumno
 {
-    public class Alumno : Persona
+    public class Alumno : Persona, ISuscriptora
     {
         private int legajo;
         private float promedio;
@@ -68,9 +69,35 @@ namespace Clases.Alumno
 
             return false;
         }
+        //Metodos
         public override string ToString()
         {
             return $"Nombre: {this.nombre}\nDni: {this.dni}\nLegajo: {this.legajo}\nPromedio: {this.promedio}";
+        }
+        public void PrestarAtencion()
+        {
+            Console.WriteLine("Prestando Atencion.");
+        }
+        public void Distraerse()
+        {
+            int num =new Random().Next(3);
+            switch (num)
+            {
+                case 0: 
+                    Console.WriteLine("Mirando el Celular.");
+                    break;
+                case 1:
+                    Console.WriteLine("Dibujando en el margen de la carpeta.");
+                    break;
+                default:
+                    Console.WriteLine("Tirando un avion de papel.");
+                    break;
+            }
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }
