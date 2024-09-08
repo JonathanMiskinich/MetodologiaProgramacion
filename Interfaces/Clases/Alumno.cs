@@ -95,9 +95,12 @@ namespace Clases.Alumno
             }
         }
 
-        public void Update()
+        public void Update(bool b)
         {
-            throw new NotImplementedException();
+            if (b)
+                this.PrestarAtencion();
+            else
+                this.Distraerse();
         }
     }
 }

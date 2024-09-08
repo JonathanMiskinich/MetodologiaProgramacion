@@ -4,7 +4,7 @@ using Interfaces.Clases.Persona;
 using Clases.Alumno;
 using PIterator;
 using Interfaces.PStrategy_Comparacion;
-
+using Clases.Profesor;
 
 namespace Funciones
 {
@@ -76,6 +76,15 @@ namespace Funciones
                 Alumno elem = (Alumno)iterador.Actual();
                 elem.setMetodoComparar(estrategiaNueva);
                 iterador.Siguiente();
+            }
+        }
+
+        public static void DictadoDeCLases(Profesor p)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                p.HablarALaClase();
+                p.EscribirEnElPizarron();
             }
         }
     }
