@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Practicas-Facultad\\Metodologia\\Interfaces\\Interfaces.csproj",
-      "projectName": "Interfaces",
-      "projectPath": "D:\\Practicas-Facultad\\Metodologia\\Interfaces\\Interfaces.csproj",
+      "projectUniqueName": "D:\\Practicas-Facultad\\Metodologia\\Patrones-de-Diseño\\Patrones-de-Diseño.csproj",
+      "projectName": "Patrones-de-Diseño",
+      "projectPath": "D:\\Practicas-Facultad\\Metodologia\\Patrones-de-Diseño\\Patrones-de-Diseño.csproj",
       "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
-      "outputPath": "D:\\Practicas-Facultad\\Metodologia\\Interfaces\\obj\\",
+      "outputPath": "D:\\Practicas-Facultad\\Metodologia\\Patrones-de-Diseño\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config"

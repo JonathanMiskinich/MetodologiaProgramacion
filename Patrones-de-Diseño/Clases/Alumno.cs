@@ -10,12 +10,14 @@ namespace Clases.Alumno
         private int legajo;
         private float promedio;
         private Comparacion metodoComparar;
+        private int calificacion;
 
         //COnstructores
         public Alumno(string nombre, int dni, int legajo, float promedio) : base(nombre, dni)
         {
             this.legajo = legajo;
             this.promedio = promedio;
+            this.calificacion = 0;
         }
         // Getters and Setters
         public int getLegajo
@@ -25,6 +27,10 @@ namespace Clases.Alumno
         public float getPromedio
         {
             get { return this.promedio; }
+        }
+        public int getCalificacion
+        {
+            get{ return this.calificacion; }
         }
         //Strategy
         public void setMetodoComparar(Comparacion comparar)
@@ -101,6 +107,14 @@ namespace Clases.Alumno
                 this.PrestarAtencion();
             else
                 this.Distraerse();
+        }
+        public virtual int ResponderPregunta(int pregunta)
+        {
+            return new Random().Next(1,4);
+        }
+        public string MostrarCalificación()
+        {
+            return $"{this.nombre}\t{this.calificacion.ToString()}";
         }
     }
 }

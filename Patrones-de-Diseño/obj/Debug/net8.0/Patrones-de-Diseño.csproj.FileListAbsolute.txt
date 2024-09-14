@@ -1,0 +1,15 @@
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.GeneratedMSBuildEditorConfig.editorconfig
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.AssemblyInfoInputs.cache
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.AssemblyInfo.cs
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.csproj.CoreCompileInputs.cache
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.sourcelink.json
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\bin\Debug\net8.0\Patrones-de-Diseño.exe
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\bin\Debug\net8.0\Patrones-de-Diseño.deps.json
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\bin\Debug\net8.0\Patrones-de-Diseño.runtimeconfig.json
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\bin\Debug\net8.0\Patrones-de-Diseño.dll
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\bin\Debug\net8.0\Patrones-de-Diseño.pdb
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.dll
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\refint\Patrones-de-Diseño.dll
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.pdb
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\Patrones-de-Diseño.genruntimeconfig.cache
+D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\obj\Debug\net8.0\ref\Patrones-de-Diseño.dll
