@@ -40,7 +40,7 @@ namespace Practica_n4
             CalificacionLetra concDecorator = new CalificacionLetra(alumno);
             Console.WriteLine(concDecorator.MostrarCalificacion());
             
-            CalificacionPromocion concDecorator2 = new CalificacionPromocion(alumno);
+            CalificacionPromocion concDecorator2 = new CalificacionPromocion(concDecorator);
             Console.WriteLine(concDecorator2.MostrarCalificacion());
         }
     }

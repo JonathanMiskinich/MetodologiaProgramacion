@@ -1,5 +1,6 @@
 using PDecorator.BaseDecorators;
 using PDecorator.MostrarCalificacion;
+using PDecorator.ConcreteDecorator;
 
 namespace PDecorator.ConcreteDecorator
 {
@@ -9,11 +10,11 @@ namespace PDecorator.ConcreteDecorator
         public override string MostrarCalificacion()
         {
             string mensaje = base.MostrarCalificacion();
-            int calificacion = mensaje[mensaje.Length -1] - '0';
+            int num = FuncionesAuxiliares.UnicoNumeroEnCedena(mensaje);
 
-            if (calificacion >= 7)
+            if (num >= 7)
                 return mensaje + " " + "(PROMOCION)";
-            else if (calificacion >= 4 && calificacion < 7)
+            else if (num >= 4 && num < 7)
                 return mensaje + " " + "(APROBADO)";
             else
                 return mensaje + " " + "(DESAPROBADO)";

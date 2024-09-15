@@ -31,5 +31,20 @@ namespace PDecorator.ConcreteDecorator
             }
             return "";
         }
+
+        public static int UnicoNumeroEnCedena(string mensaje)
+        {
+            string[] partesDeLaCadena = mensaje.Split(new[] { ' ', '\t' });
+            foreach (string cadena in partesDeLaCadena)
+            {
+                if (cadena.Length == 1)
+                {
+                    char caracter = cadena[0];
+                    return caracter - '0';
+                }
+                      
+            }
+            return -1;
+        }
     }
 }
