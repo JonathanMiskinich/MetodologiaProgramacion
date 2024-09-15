@@ -1,5 +1,6 @@
 ﻿using Practica3_14;
 using Practica2_10;
+using Practica_n4;
 
 namespace Program
 {
@@ -11,7 +12,7 @@ namespace Program
             Console.Write("Ingrese una opcion: ");
             string opc = Console.ReadLine();
 
-            while (opc  != "3")
+            while (opc  != "9")
             {
                 switch (opc)
                 {
@@ -21,10 +22,17 @@ namespace Program
                     case "2":
                         Practica_3.Run();
                         break;
+                    case "3":
+                        Practica_4.Ejercicio_4();
+                        break;
                     default:
                         break;
                 }
+                Menu();
+                Console.Write("Ingrese una opcion: ");
+                opc = Console.ReadLine();
             }
+
             
         }
         static void Menu()
@@ -32,7 +40,8 @@ namespace Program
             Console.WriteLine("Menu de opciones:");
             Console.WriteLine("1 - Estrategias comparacion Alumnos (Practica 2)");
             Console.WriteLine("2 - Patron Observer Alumno / Profesor (Practica 3)");
-            Console.WriteLine("3 - Salir");
+            Console.WriteLine("3 - Patron Adapter / Alumnos tomando Examen (Practica 4 - ejercicio 4)");
+            Console.WriteLine("9 - Salir");
             Console.WriteLine("---------");
         }
     }
