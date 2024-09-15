@@ -9,7 +9,8 @@ namespace PDecorator.ConcreteDecorator
         public override string MostrarCalificacion()
         {
             string mensaje = base.MostrarCalificacion();
-            string textoAgregar = FuncionesAuxiliares.NumeroALetra(mensaje[mensaje.Length - 1]);
+            char caracter = (char)(FuncionesAuxiliares.UnicoNumeroEnCedena(mensaje) + '0');
+            string textoAgregar = FuncionesAuxiliares.NumeroALetra(caracter);
 
             return mensaje + " " + $"({textoAgregar})";
         }
@@ -38,11 +39,7 @@ namespace PDecorator.ConcreteDecorator
             foreach (string cadena in partesDeLaCadena)
             {
                 if (cadena.Length == 1)
-                {
-                    char caracter = cadena[0];
-                    return caracter - '0';
-                }
-                      
+                    return cadena[0] - '0';   
             }
             return -1;
         }
