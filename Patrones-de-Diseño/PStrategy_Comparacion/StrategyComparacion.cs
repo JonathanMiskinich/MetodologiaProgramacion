@@ -1,5 +1,5 @@
 using System;
-using Clases.Alumno;
+using Clases.Alumnos;
 
 namespace Interfaces.PStrategy_Comparacion
 {

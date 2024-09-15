@@ -1,7 +1,7 @@
 using Interfaces_Practica1;
 using Clases.Numero;
 using Interfaces.Clases.Persona;
-using Clases.Alumno;
+using Clases.Alumnos;
 using PIterator;
 using Interfaces.PStrategy_Comparacion;
 using Clases.Profesor;

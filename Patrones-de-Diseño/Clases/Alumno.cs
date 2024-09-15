@@ -3,7 +3,7 @@ using Interfaces_Practica1;
 using Interfaces.PStrategy_Comparacion;
 using PObserver.Suscriptora;
 
-namespace Clases.Alumno
+namespace Clases.Alumnos
 {
     public class Alumno : Persona, ISuscriptora
     {
@@ -31,6 +31,10 @@ namespace Clases.Alumno
         public int getCalificacion
         {
             get{ return this.calificacion; }
+        }
+        public void setCalificacion(int calif)
+        {
+            this.calificacion = calif;
         }
         //Strategy
         public void setMetodoComparar(Comparacion comparar)
@@ -112,7 +116,7 @@ namespace Clases.Alumno
         {
             return new Random().Next(1,4);
         }
-        public string MostrarCalificación()
+        public string MostrarCalificacion()
         {
             return $"{this.nombre}\t{this.calificacion.ToString()}";
         }

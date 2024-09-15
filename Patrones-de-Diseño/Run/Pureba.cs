@@ -1,6 +1,6 @@
 using PFactoryMethod.CreadorComparables;
 using PFactoryMethod.CreadorAlumno;
-using Clases.Alumno;
+using Clases.Alumnos;
 
 namespace Run.Prueba
 {

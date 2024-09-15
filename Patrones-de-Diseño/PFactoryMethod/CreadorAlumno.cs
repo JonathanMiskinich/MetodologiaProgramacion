@@ -3,7 +3,7 @@ using PFactoryMethod.CreadorComparables;
 using Clases.DatosAzar;
 using Clases.LectorDeDatos;
 using Funciones;
-using Clases.Alumno;
+using Clases.Alumnos;
 
 namespace PFactoryMethod.CreadorAlumno
 {
