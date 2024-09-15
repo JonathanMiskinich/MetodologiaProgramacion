@@ -2,7 +2,7 @@ using PDecorator.MostrarCalificacion;
 
 namespace PDecorator.BaseDecorators
 {
-    public class BaseDecorator
+    public class BaseDecorator : IMostrarCalificacion
     {
         protected IMostrarCalificacion decorador;
         public BaseDecorator(IMostrarCalificacion componente)

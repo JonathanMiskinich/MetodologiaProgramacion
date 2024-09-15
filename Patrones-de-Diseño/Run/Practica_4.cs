@@ -33,12 +33,15 @@ namespace Practica_n4
         }
         public static void Prueba()
         {
-            Alumno alumno = new Alumno(Helper.NombreAzar(), GeneradorDatosAzar.NumeroAleatorio(10000), GeneradorDatosAzar.NumeroAleatorio(10000), 0);
+            Alumno alumno = new Alumno(Helper.NombreAzar(), GeneradorDatosAzar.NumeroAleatorio(10000), GeneradorDatosAzar.NumeroAleatorio(10000), 7);
+            alumno.setCalificacion(7);
             Console.WriteLine(alumno.MostrarCalificacion());
 
             CalificacionLetra concDecorator = new CalificacionLetra(alumno);
-            Console.WriteLine(alumno.MostrarCalificacion());
             Console.WriteLine(concDecorator.MostrarCalificacion());
+            
+            CalificacionPromocion concDecorator2 = new CalificacionPromocion(alumno);
+            Console.WriteLine(concDecorator2.MostrarCalificacion());
         }
     }
 }
