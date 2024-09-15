@@ -25,6 +25,9 @@ namespace Program
                     case "3":
                         Practica_4.Ejercicio_4();
                         break;
+                    case "4":
+                        Practica_4.Prueba();
+                        break;
                     default:
                         break;
                 }
@@ -41,6 +44,7 @@ namespace Program
             Console.WriteLine("1 - Estrategias comparacion Alumnos (Practica 2)");
             Console.WriteLine("2 - Patron Observer Alumno / Profesor (Practica 3)");
             Console.WriteLine("3 - Patron Adapter / Alumnos tomando Examen (Practica 4 - ejercicio 4)");
+            Console.WriteLine("4 - Prueba");
             Console.WriteLine("9 - Salir");
             Console.WriteLine("---------");
         }

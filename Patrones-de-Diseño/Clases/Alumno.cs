@@ -2,10 +2,11 @@ using Interfaces.Clases.Persona;
 using Interfaces_Practica1;
 using Interfaces.PStrategy_Comparacion;
 using PObserver.Suscriptora;
+using PDecorator.MostrarCalificacion;
 
 namespace Clases.Alumnos
 {
-    public class Alumno : Persona, ISuscriptora
+    public class Alumno : Persona, ISuscriptora, IMostrarCalificacion
     {
         private int legajo;
         private float promedio;
@@ -20,6 +21,10 @@ namespace Clases.Alumnos
             this.calificacion = 0;
         }
         // Getters and Setters
+        public override string getNombre
+        {
+            get { return this.getNombre; }
+        }
         public int getLegajo
         {
             get {return this.legajo;}

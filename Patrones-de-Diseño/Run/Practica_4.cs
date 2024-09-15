@@ -4,6 +4,8 @@ using Clases.Alumnos;
 using PAdapter.alumnoAdapter;
 using Funciones;
 using Clases.DatosAzar;
+using PDecorator.BaseDecorators;
+using PDecorator.ConcreteDecorator;
 
 namespace Practica_n4
 {
@@ -28,6 +30,15 @@ namespace Practica_n4
             }
 
             profesor.teachingAClass();
+        }
+        public static void Prueba()
+        {
+            Alumno alumno = new Alumno(Helper.NombreAzar(), GeneradorDatosAzar.NumeroAleatorio(10000), GeneradorDatosAzar.NumeroAleatorio(10000), 0);
+            Console.WriteLine(alumno.MostrarCalificacion());
+
+            CalificacionLetra concDecorator = new CalificacionLetra(alumno);
+            Console.WriteLine(alumno.MostrarCalificacion());
+            Console.WriteLine(concDecorator.MostrarCalificacion());
         }
     }
 }
