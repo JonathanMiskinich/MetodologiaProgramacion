@@ -3,6 +3,7 @@ using MetodologíasDeProgramaciónI;
 using PDecorator.ConcreteDecorator;
 using PAdapter.alumnoAdapter;
 using Interfaz.IAlumnos;
+using  PFactoryMethod.DecoratorFactorys;
 
 namespace PFactoryMethod.StudentFactorys
 {
@@ -18,12 +19,18 @@ namespace PFactoryMethod.StudentFactorys
         {
             IAlumno alumno = (IAlumno)base.CrearAleatorio(opcion);
             
-            CalificacionLegajo decoradorLegajo = new CalificacionLegajo(alumno);
-            CalificacionLetra decoradoLetras = new CalificacionLetra(decoradorLegajo);
-            CalificacionPromocion decoradoPromocion = new(decoradoLetras);
-            CalificacionDecorada decoradaAsteriscos = new(decoradoPromocion);
+            //CalificacionLegajo decoradorLegajo = new CalificacionLegajo(alumno);
+            //CalificacionLetra decoradoLetras = new CalificacionLetra(decoradorLegajo);
+            //CalificacionPromocion decoradoPromocion = new(decoradoLetras);
+            //CalificacionDecorada decoradaAsteriscos = new(decoradoPromocion);
 
-            Student stud = new AlumnoAdapter(decoradaAsteriscos);
+            DecoratorFactory fabricaDecoradores = new();
+            IAlumno decorador = fabricaDecoradores.CrearDecoratorAleatorio(alumno, "1");
+            decorador = fabricaDecoradores.CrearDecoratorAleatorio(decorador, "2"); 
+            decorador = fabricaDecoradores.CrearDecoratorAleatorio(decorador, "3"); 
+            decorador = fabricaDecoradores.CrearDecoratorAleatorio(decorador, "4"); 
+
+            Student stud = new AlumnoAdapter(decorador);
             return stud;
         }
     }
