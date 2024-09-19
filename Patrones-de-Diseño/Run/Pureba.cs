@@ -1,5 +1,5 @@
 using PFactoryMethod.CreadorComparables;
-using PFactoryMethod.CreadorAlumno;
+using PFactoryMethod.CreadorAlumnos;
 using Clases.Alumnos;
 
 namespace Run.Prueba
@@ -8,8 +8,8 @@ namespace Run.Prueba
     {
         public static void Run()
         {
-            ICreadorComparable fabricaAlumno = new CreadorAlumno();
-            Alumno alumno = (Alumno)fabricaAlumno.CrearAleatorio();
+            
+
         }
     }
 }

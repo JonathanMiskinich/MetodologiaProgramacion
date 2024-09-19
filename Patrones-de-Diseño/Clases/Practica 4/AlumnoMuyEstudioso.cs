@@ -1,8 +1,11 @@
+using Interfaces.PStrategy_Comparacion;
+using Interfaces_Practica1;
+using Interfaz.IAlumnos;
 using Clases.Alumnos;
 
 namespace Clases.alumnoMuyEstudioso
 {
-    public class AlumnoMuyEstudioso : Alumno
+    public class AlumnoMuyEstudioso : Alumno, IAlumno
     {
         public AlumnoMuyEstudioso(string nombre, int dni, int legajo, float promedio) : base(nombre, dni, legajo, promedio){}
         public override int ResponderPregunta(int pregunta)

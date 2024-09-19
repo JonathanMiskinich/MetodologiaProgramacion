@@ -1,16 +1,15 @@
 using PDecorator.BaseDecorators;
-using PDecorator.MostrarCalificacion;
-using PDecorator.ConcreteDecorator;
+using Interfaz.IAlumnos;
 
 namespace PDecorator.ConcreteDecorator
 {
     public class CalificacionPromocion : BaseDecorator
     {
-        public CalificacionPromocion(IMostrarCalificacion componente) : base(componente){}
+        public CalificacionPromocion(IAlumno componente) : base(componente){}
         public override string MostrarCalificacion()
         {
             string mensaje = base.MostrarCalificacion();
-            int num = FuncionesAuxiliares.UnicoNumeroEnCedena(mensaje);
+            int num = base.getCalificacion();
 
             if (num >= 7)
                 return mensaje + " " + "(PROMOCION)";

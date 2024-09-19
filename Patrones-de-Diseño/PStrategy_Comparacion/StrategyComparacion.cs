@@ -1,10 +1,12 @@
 using System;
-using Clases.Alumnos;
+using Interfaz.IAlumnos;
 
 namespace Interfaces.PStrategy_Comparacion
 {
     public interface Comparacion
     {
-        bool ComparacionIguales(Alumno alumX, Alumno alumY);
+        bool Iguales(IAlumno alumX, IAlumno alumY);
+        bool MayorQue(IAlumno alumX, IAlumno alumY);
+        bool MenorQue(IAlumno alumX, IAlumno alumY);
     }
 }

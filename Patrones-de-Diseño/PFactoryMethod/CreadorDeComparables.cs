@@ -4,7 +4,7 @@ namespace PFactoryMethod.CreadorComparables
 {
     public interface ICreadorComparable
     {
-        public Comparable CrearAleatorio();
-        public Comparable CrearPorTeclado();
+        public Comparable CrearAleatorio(string opcion);
+        public Comparable CrearPorTeclado(string opcion);
     }
 }

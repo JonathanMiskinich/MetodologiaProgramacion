@@ -3,21 +3,21 @@ using Interfaz.IAlumnos;
 
 namespace Interfaces.PStrategy_Comparacion
 {
-    public class ComparacionNombre : Comparacion
+    public class ComparacionCalificacion : Comparacion
     {
         public bool Iguales(IAlumno alumX, IAlumno alumY)
         {
-            return alumX.getNombre == alumY.getNombre;
+            return alumX.getCalificacion() == alumY.getCalificacion();
         }
 
         public bool MayorQue(IAlumno alumX, IAlumno alumY)
         {
-            return alumX.getNombre().CompareTo(alumY.getNombre()) == 1;
+            return alumX.getCalificacion() > alumY.getCalificacion();
         }
 
         public bool MenorQue(IAlumno alumX, IAlumno alumY)
         {
-             return alumX.getNombre().CompareTo(alumY.getNombre()) == -1;
+            return alumX.getCalificacion() < alumY.getCalificacion();
         }
     }
 }

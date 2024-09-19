@@ -4,9 +4,9 @@ namespace Interfaces_Practica1
 {
     public interface Comparable
     {
-        public bool sosIgual(Comparable comparacion);
-        public bool sosMenor(Comparable comparacion);
-        public bool sosMayor(Comparable comparacion);
+        bool sosIgual(Comparable comparacion);
+        bool sosMenor(Comparable comparacion);
+        bool sosMayor(Comparable comparacion);
 
     }
 

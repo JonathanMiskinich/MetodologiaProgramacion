@@ -14,10 +14,6 @@ namespace Interfaces.Clases.Persona
         }
 
         //Getter and Setters
-        public virtual string getNombre
-        { 
-            get{return this.nombre;} 
-        }
         public int getDni
         {
             get { return this.dni;}

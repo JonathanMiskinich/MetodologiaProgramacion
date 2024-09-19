@@ -9,12 +9,12 @@ namespace PFactoryMethod.CreadorNumero
 {
     public class CreadorNumero : ICreadorComparable
     {
-        public Comparable CrearAleatorio()
+        public Comparable CrearAleatorio(string opcion)
         {
             return new Numero((sbyte)GeneradorDatosAzar.NumeroAleatorio(128));
         }
 
-        public Comparable CrearPorTeclado()
+        public Comparable CrearPorTeclado(string opcion)
         {
             return new Numero((sbyte)LectorDeDatos.NumeroPorTeclado());
         }

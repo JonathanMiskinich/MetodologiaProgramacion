@@ -4,31 +4,56 @@ using Clases.DatosAzar;
 using Clases.LectorDeDatos;
 using Funciones;
 using Clases.Alumnos;
+using Clases.alumnoMuyEstudioso;
 
-namespace PFactoryMethod.CreadorAlumno
+namespace PFactoryMethod.CreadorAlumnos
 {
     public class CreadorAlumno : ICreadorComparable
     {
 
-        public  Comparable CrearAleatorio()
+        public virtual Comparable CrearAleatorio(string opcion)
         {
             int dni = GeneradorDatosAzar.NumeroAleatorio(10000);
             string nombre = Helper.NombreAzar();
             int legajo = GeneradorDatosAzar.NumeroAleatorio(10000);
-            float promedio = (float)GeneradorDatosAzar.NumeroAleatorio(10000);
+            float promedio = (float)GeneradorDatosAzar.NumeroAleatorio(11);
 
-            Alumno alum = new(nombre, dni, legajo, promedio);
+            Alumno alum = null;
+
+            switch (opcion)
+            {
+                case "1":
+                    alum = new Alumno(nombre,dni,legajo,promedio);
+                    break;
+                case "2":
+                    alum = new AlumnoMuyEstudioso(nombre,dni,legajo,promedio);
+                    break;
+                default:
+                    break;
+            }
             return alum;
         }
 
-        public Comparable CrearPorTeclado()
+        public virtual Comparable CrearPorTeclado(string opcion)
         {
             int dni = LectorDeDatos.NumeroPorTeclado();
             string nombre = LectorDeDatos.StringPorTeclado();
             int legajo = LectorDeDatos.NumeroPorTeclado();
             float promedio = (float)LectorDeDatos.NumeroPorTeclado();
 
-            Alumno alum = new(nombre, dni, legajo, promedio);
+            Alumno alum = null;
+
+            switch (opcion)
+            {
+                case "1":
+                    alum = new Alumno(nombre,dni,legajo,promedio);
+                    break;
+                case "2":
+                    alum = new AlumnoMuyEstudioso(nombre,dni,legajo,promedio);
+                    break;
+                default:
+                    break;
+            }
             return alum;
         }
     }

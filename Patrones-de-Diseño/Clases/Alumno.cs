@@ -2,40 +2,45 @@ using Interfaces.Clases.Persona;
 using Interfaces_Practica1;
 using Interfaces.PStrategy_Comparacion;
 using PObserver.Suscriptora;
-using PDecorator.MostrarCalificacion;
+using Interfaz.IAlumnos;
 
 namespace Clases.Alumnos
 {
-    public class Alumno : Persona, ISuscriptora, IMostrarCalificacion
+    public class Alumno : Persona, ISuscriptora, IAlumno
     {
         private int legajo;
         private float promedio;
-        private Comparacion metodoComparar;
         private int calificacion;
+        private Comparacion st = null;
 
         //COnstructores
-        public Alumno(string nombre, int dni, int legajo, float promedio) : base(nombre, dni)
+        public Alumno(string nombre, int dni, int legajo, float promedio, Comparacion st = null) : base(nombre, dni)
         {
             this.legajo = legajo;
             this.promedio = promedio;
             this.calificacion = 0;
+            this.st = st;
         }
         // Getters and Setters
-        public override string getNombre
+        public string getNombre()
         {
-            get { return this.getNombre; }
+            return this.nombre;
         }
-        public int getLegajo
+        public int getDni()
         {
-            get {return this.legajo;}
+            return this.dni;
         }
-        public float getPromedio
+        public int getLegajo()
         {
-            get { return this.promedio; }
+            return this.legajo;
         }
-        public int getCalificacion
+        public float getPromedio()
         {
-            get{ return this.calificacion; }
+            return this.promedio;
+        }
+        public int getCalificacion()
+        {
+            return this.calificacion;
         }
         public void setCalificacion(int calif)
         {
@@ -44,45 +49,24 @@ namespace Clases.Alumnos
         //Strategy
         public void setMetodoComparar(Comparacion comparar)
         {
-            this.metodoComparar = comparar;
+            this.st = comparar;
         }
 
-        public bool Comparacion(Alumno alum)
-        {
-            return metodoComparar.ComparacionIguales(this, alum);
-        }
+        
         //Interfaces
-        public override bool sosIgual(Comparable comparacion)
+        public bool sosIgual(IAlumno comparacion)
         {
-            if (comparacion is Alumno)
-            {
-                Alumno alum = (Alumno)comparacion;
-                return alum.getLegajo == this.legajo;
-            }
-
-            return false;
+            return st.Iguales(this, comparacion);
         }
 
-        public override bool sosMenor(Comparable comparacion)
+        public bool sosMenor(IAlumno comparacion)
         {
-            if (comparacion is Alumno)
-            {
-                Alumno alum = (Alumno)comparacion;
-                return alum.getLegajo < this.legajo;
-            }
-
-            return false;
+            return st.MenorQue(this, comparacion);
         }
 
-        public override bool sosMayor(Comparable comparacion)
+        public bool sosMayor(IAlumno comparacion)
         {
-            if (comparacion is Alumno)
-            {
-                Alumno alum = (Alumno)comparacion;
-                return alum.getLegajo > this.legajo;
-            }
-
-            return false;
+            return st.MayorQue(this, comparacion);
         }
         //Metodos
         public override string ToString()

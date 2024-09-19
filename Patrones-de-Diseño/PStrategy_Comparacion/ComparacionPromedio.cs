@@ -1,12 +1,22 @@
-using Clases.Alumnos;
+using Interfaz.IAlumnos;
 
 namespace Interfaces.PStrategy_Comparacion
 {
     public class ComparacionPromedio : Comparacion
     {
-        public bool ComparacionIguales(Alumno alumX, Alumno alumY)
+        public bool Iguales(IAlumno alumX, IAlumno alumY)
         {
-            return alumX.getPromedio == alumY.getPromedio;
+            return alumX.getPromedio() == alumY.getPromedio();
+        }
+
+        public bool MayorQue(IAlumno alumX, IAlumno alumY)
+        {
+            return alumX.getPromedio() > alumY.getPromedio();
+        }
+
+        public bool MenorQue(IAlumno alumX, IAlumno alumY)
+        {
+            return alumX.getPromedio() < alumY.getPromedio();
         }
     }
 }
