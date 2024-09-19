@@ -18,13 +18,13 @@ namespace Practica_n4
             
             for (int i = 0; i < 10; i++)
             {
-                Student stud = fabrica.CrearStudent();
+                Student stud = fabrica.CrearStudent("1");
                 profesor.goToClass(stud);
             }
             
             for (int i = 0; i < 10; i++)
             {
-                Student stud = fabrica.CrearStudentEstudioso();
+                Student stud = fabrica.CrearStudent("2");
                 profesor.goToClass(stud);
             }
 
@@ -37,13 +37,13 @@ namespace Practica_n4
             
             for (int i = 0; i < 10; i++)
             {
-                Student stud = fabrica.CrearStudentConDecorator();
+                Student stud = fabrica.CrearStudentDecorado("1");
                 profesor.goToClass(stud);
             }
             
             for (int i = 0; i < 10; i++)
             {
-                Student stud = fabrica.CrearStudentEstudiosoConDecorator();
+                Student stud = fabrica.CrearStudentDecorado("2");
                 profesor.goToClass(stud);
             }
 

@@ -1,52 +1,30 @@
 using PFactoryMethod.CreadorAlumnos;
 using MetodologíasDeProgramaciónI;
-using Interfaces.PStrategy_Comparacion;
 using PDecorator.ConcreteDecorator;
 using PAdapter.alumnoAdapter;
 using Interfaz.IAlumnos;
-using Clases.alumnoMuyEstudioso;
 
 namespace PFactoryMethod.StudentFactorys
 {
     public class StudentFactory : CreadorAlumno
     {
-        public Student CrearStudentConDecorator()
+        public Student CrearStudent(string opcion)
         {
-            IAlumno alumno = (IAlumno)base.CrearAleatorio("1");
-            alumno.setMetodoComparar(new ComparacionCalificacion());
-
-            CalificacionLetra calificacionLetras = new CalificacionLetra(alumno);
-            
-            CalificacionPromocion califPromocion = new CalificacionPromocion(calificacionLetras);
-
-            CalificacionDecorada califDecorada= new CalificacionDecorada(califPromocion);
-
-            return new AlumnoAdapter(califDecorada);
+            IAlumno alumno = (IAlumno)base.CrearAleatorio(opcion);
+            Student stud = new AlumnoAdapter(alumno);
+            return stud;
         }
-        public Student CrearStudent()
+        public Student CrearStudentDecorado(string opcion)
         {
-            IAlumno alumno = (IAlumno)base.CrearAleatorio("1");
-            alumno.setMetodoComparar(new ComparacionCalificacion());
-            return new AlumnoAdapter(alumno);
-        }
-        public Student CrearStudentEstudioso()
-        {
-            AlumnoMuyEstudioso alumno = (AlumnoMuyEstudioso)base.CrearAleatorio("2");
-            alumno.setMetodoComparar(new ComparacionCalificacion());
-            return new AlumnoAdapter(alumno);
-        }
-        public Student CrearStudentEstudiosoConDecorator()
-        {
-            AlumnoMuyEstudioso alumno = (AlumnoMuyEstudioso)base.CrearAleatorio("2");
-            alumno.setMetodoComparar(new ComparacionCalificacion());
-
-            CalificacionLetra calificacionLetras = new CalificacionLetra(alumno);
+            IAlumno alumno = (IAlumno)base.CrearAleatorio(opcion);
             
-            CalificacionPromocion califPromocion = new CalificacionPromocion(calificacionLetras);
+            CalificacionLegajo decoradorLegajo = new CalificacionLegajo(alumno);
+            CalificacionLetra decoradoLetras = new CalificacionLetra(decoradorLegajo);
+            CalificacionPromocion decoradoPromocion = new(decoradoLetras);
+            CalificacionDecorada decoradaAsteriscos = new(decoradoPromocion);
 
-            CalificacionDecorada califDecorada= new CalificacionDecorada(califPromocion);
-            
-            return new AlumnoAdapter(califDecorada);
+            Student stud = new AlumnoAdapter(decoradaAsteriscos);
+            return stud;
         }
     }
 }
