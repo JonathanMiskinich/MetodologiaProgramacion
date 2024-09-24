@@ -7,8 +7,32 @@ namespace PFactoryMethod.DecoratorFactorys
 {
     public class DecoratorFactory : CreadorAlumno
     {
-        public IAlumno CrearDecoratorAleatorio(IAlumno alumno, string opcionDecorator)
+        public IAlumno CrearDecorator(IAlumno alumno, string opcionDecorator)
         {
+            IAlumno decorador = null;
+
+            switch (opcionDecorator)
+            {
+                case "1":
+                    decorador = new CalificacionLetra(alumno);
+                    break;
+                case "2":
+                    decorador = new CalificacionLegajo(alumno);
+                    break;
+                case "3":
+                    decorador = new CalificacionPromocion(alumno);
+                    break;
+                case "4":
+                    decorador = new CalificacionDecorada(alumno);
+                    break;
+                default:
+                    break;
+            }
+            return decorador;
+        }
+        public IAlumno CrearDecoratorAleatorio(string opcionDecorator)
+        {
+            IAlumno alumno = (IAlumno)base.CrearAleatorio("1");
             IAlumno decorador = null;
 
             switch (opcionDecorator)

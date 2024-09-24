@@ -17,7 +17,7 @@ namespace PFactoryMethod.StudentFactorys
         }
         public Student CrearStudentDecorado(string opcion)
         {
-            IAlumno alumno = (IAlumno)base.CrearAleatorio(opcion);
+            //IAlumno alumno = (IAlumno)base.CrearAleatorio(opcion);
             
             //CalificacionLegajo decoradorLegajo = new CalificacionLegajo(alumno);
             //CalificacionLetra decoradoLetras = new CalificacionLetra(decoradorLegajo);
@@ -25,10 +25,10 @@ namespace PFactoryMethod.StudentFactorys
             //CalificacionDecorada decoradaAsteriscos = new(decoradoPromocion);
 
             DecoratorFactory fabricaDecoradores = new();
-            IAlumno decorador = fabricaDecoradores.CrearDecoratorAleatorio(alumno, "1");
-            decorador = fabricaDecoradores.CrearDecoratorAleatorio(decorador, "2"); 
-            decorador = fabricaDecoradores.CrearDecoratorAleatorio(decorador, "3"); 
-            decorador = fabricaDecoradores.CrearDecoratorAleatorio(decorador, "4"); 
+            IAlumno decorador = fabricaDecoradores.CrearDecoratorAleatorio("1");
+            decorador = fabricaDecoradores.CrearDecorator(decorador, "2"); 
+            decorador = fabricaDecoradores.CrearDecorator(decorador, "3"); 
+            decorador = fabricaDecoradores.CrearDecorator(decorador, "4"); 
 
             Student stud = new AlumnoAdapter(decorador);
             return stud;
