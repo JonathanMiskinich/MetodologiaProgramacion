@@ -55,18 +55,18 @@ namespace PDecorator.BaseDecorators
         {
             this.alum.setMetodoComparar(comparar);
         }
-        public bool sosIgual(IAlumno comparacion)
+        /* public bool sosIgual(IAlumno comparacion)
         {
             return this.alum.sosIgual(comparacion);
-        }
+        } */
         public bool sosIgual(Comparable comparacion)
         {
             return this.alum.sosIgual(comparacion);
         }
-        public bool sosMayor(IAlumno comparacion)
+        /* public bool sosMayor(IAlumno comparacion)
         {
             return this.alum.sosMayor(comparacion);
-        }
+        } */
         public bool sosMayor(Comparable comparacion)
         {
             return this.alum.sosMayor(comparacion);
@@ -77,9 +77,9 @@ namespace PDecorator.BaseDecorators
             return this.alum.sosMenor(comparacion);
         }
 
-        public bool sosMenor(IAlumno comparacion)
+        /* public bool sosMenor(IAlumno comparacion)
         {
             return this.alum.sosMenor(comparacion);
-        }
+        } */
     }
 }

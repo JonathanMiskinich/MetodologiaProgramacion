@@ -13,9 +13,6 @@ namespace Interfaz.IAlumnos
         string MostrarCalificacion();
         int ResponderPregunta(int pregunta);
         int getDni();
-        bool sosIgual(IAlumno comparacion);
-        bool sosMenor(IAlumno comparacion);
-        bool sosMayor(IAlumno comparacion);
         void setMetodoComparar(Comparacion comparar);
     }
 }

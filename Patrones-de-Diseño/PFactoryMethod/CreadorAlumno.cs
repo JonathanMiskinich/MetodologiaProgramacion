@@ -5,6 +5,7 @@ using Clases.LectorDeDatos;
 using Funciones;
 using Clases.Alumnos;
 using Clases.alumnoMuyEstudioso;
+using Interfaz.IAlumnos;
 
 namespace PFactoryMethod.CreadorAlumnos
 {
@@ -18,7 +19,7 @@ namespace PFactoryMethod.CreadorAlumnos
             int legajo = GeneradorDatosAzar.NumeroAleatorio(10000);
             float promedio = (float)GeneradorDatosAzar.NumeroAleatorio(11);
 
-            Alumno alum = null;
+            IAlumno alum = null;
 
             switch (opcion)
             {
@@ -27,6 +28,9 @@ namespace PFactoryMethod.CreadorAlumnos
                     break;
                 case "2":
                     alum = new AlumnoMuyEstudioso(nombre,dni,legajo,promedio);
+                    break;
+                case "3":
+                    alum = new AlumnoProxy(nombre,dni,legajo,promedio);
                     break;
                 default:
                     break;
@@ -41,7 +45,7 @@ namespace PFactoryMethod.CreadorAlumnos
             int legajo = LectorDeDatos.NumeroPorTeclado();
             float promedio = (float)LectorDeDatos.NumeroPorTeclado();
 
-            Alumno alum = null;
+            IAlumno alum = null;
 
             switch (opcion)
             {
@@ -50,6 +54,9 @@ namespace PFactoryMethod.CreadorAlumnos
                     break;
                 case "2":
                     alum = new AlumnoMuyEstudioso(nombre,dni,legajo,promedio);
+                    break;
+                case "3":
+                    alum = new AlumnoProxy(nombre,dni,legajo,promedio);
                     break;
                 default:
                     break;

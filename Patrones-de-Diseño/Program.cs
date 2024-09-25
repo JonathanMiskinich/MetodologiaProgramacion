@@ -1,6 +1,7 @@
 ﻿using Practica3_14;
 using Practica2_10;
 using Practica_n4;
+using Practicas;
 
 namespace Program
 {
@@ -27,6 +28,9 @@ namespace Program
                         break;
                     case "4":
                         Practica_4.StudentConDecorator();
+                        break;
+                    case "5":
+                        Practica_5.Run();
                         break;
                     default:
                         break;
