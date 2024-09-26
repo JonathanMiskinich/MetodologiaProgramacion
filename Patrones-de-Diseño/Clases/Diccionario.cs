@@ -1,14 +1,17 @@
 using Clases.Clave_Valor;
 using Interfaces_Practica1;
+using PCommand;
 using PIterator;
 
 namespace Clases.Diccionario
 {
-    public class Diccionario : Coleccionable
+    public class Diccionario : Coleccionable, Ordenable
     {
         private List<ClaveValor> listaElementos;
         //Utilizo Clase Numero por que necesito qeu la clave sea Comparable
         private static Numero.Numero claveUnica = new Numero.Numero(0);
+        private OrdenEnAula1 orden1;
+        private OrdenEnAula2 orden2;
         //Constructores
         public Diccionario()
         {
@@ -112,6 +115,20 @@ namespace Clases.Diccionario
                     }
             }
             return false;
+        }
+        public void SetOrdenInicio(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
+        }
+
+        public void SetOrdenLlegaAlumno(OrdenEnAula2 orden)
+        {
+            this.orden2 = orden;
+        }
+
+        public void SetOrdenAulaLlena(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
         }
     }
 }

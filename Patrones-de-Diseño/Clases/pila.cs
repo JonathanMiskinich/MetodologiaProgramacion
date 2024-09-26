@@ -1,14 +1,16 @@
-using System.Collections.Generic;
 using Interfaces_Practica1;
 using PIterator;
+using System;
+using PCommand;
 
 namespace Clases.Pila
 {
-    using System;
-    public class Pila : Coleccionable
+    public class Pila : Coleccionable, Ordenable
     {
         private List<Comparable> elementosPila;
         private int? tamanio; 
+        private OrdenEnAula1 orden1;
+        private OrdenEnAula2 orden2;
 
         // Constructores
         public Pila(int tamanioUser)
@@ -141,6 +143,20 @@ namespace Clases.Pila
         public bool Contiene(Comparable elemento)
         {
             return elementosPila.Contains(elemento);
+        }
+        public void SetOrdenInicio(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
+        }
+
+        public void SetOrdenLlegaAlumno(OrdenEnAula2 orden)
+        {
+            this.orden2 = orden;
+        }
+
+        public void SetOrdenAulaLlena(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
         }
     }
     public class PilaLLenaException : Exception{

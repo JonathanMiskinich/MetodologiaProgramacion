@@ -1,13 +1,16 @@
-using System;
 using Interfaces_Practica1;
+using PCommand;
 using PIterator;
 
 namespace Clases.Cola
 {
-    public class Cola : Coleccionable
+    public class Cola : Coleccionable, Ordenable
     {
         private List<Comparable> elementosCola;
         private byte? tamanioCola = null;
+        private OrdenEnAula1 orden1;
+        private OrdenEnAula2 orden2;
+
         
         // Constructor
         public Cola(byte tamanioCola)
@@ -118,6 +121,20 @@ namespace Clases.Cola
             return elementosCola.Contains(elemento);
         }
 
+        public void SetOrdenInicio(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
+        }
+
+        public void SetOrdenLlegaAlumno(OrdenEnAula2 orden)
+        {
+            this.orden2 = orden;
+        }
+
+        public void SetOrdenAulaLlena(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
+        }
     }
     public class ColaLLenaException : Exception{
         public ColaLLenaException(){}

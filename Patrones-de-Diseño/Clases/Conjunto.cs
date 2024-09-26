@@ -1,12 +1,15 @@
 using System.Dynamic;
 using Interfaces_Practica1;
+using PCommand;
 using PIterator;
 
 namespace Clases.Conjunto
 {
-    public class Conjunto : Coleccionable
+    public class Conjunto : Coleccionable, Ordenable
     {
         List<Comparable> elementos;
+        private OrdenEnAula1 orden1;
+        private OrdenEnAula2 orden2;
         public Conjunto()
         {
             elementos = new List<Comparable>();
@@ -66,6 +69,19 @@ namespace Clases.Conjunto
             return elementos.Contains(elemento);
         }
 
-        
+        public void SetOrdenInicio(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
+        }
+
+        public void SetOrdenLlegaAlumno(OrdenEnAula2 orden)
+        {
+            this.orden2 = orden;
+        }
+
+        public void SetOrdenAulaLlena(OrdenEnAula1 orden)
+        {
+            this.orden1 = orden;
+        }
     }
 }
