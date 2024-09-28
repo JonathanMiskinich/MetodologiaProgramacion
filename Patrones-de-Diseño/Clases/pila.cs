@@ -9,8 +9,9 @@ namespace Clases.Pila
     {
         private List<Comparable> elementosPila;
         private int? tamanio; 
-        private OrdenEnAula1 orden1;
-        private OrdenEnAula2 orden2;
+        private OrdenEnAula1 ordenInicio;
+        private OrdenEnAula1 ordenAulaLlena;
+        private OrdenEnAula2 ordenLlegaAlumno;
 
         // Constructores
         public Pila(int tamanioUser)
@@ -43,6 +44,15 @@ namespace Clases.Pila
             {
                 if (elementosPila.Count < this.tamanio)
                 {
+                    if(EsVacia())
+                    {
+                        ordenAulaLlena.Ejecutar();
+                    }
+                    if (Cuantos() == 39)
+                    {
+                        ordenAulaLlena.Ejecutar();
+                    }
+                    ordenLlegaAlumno.Ejecutar(elemento);
                     elementosPila.Add(elemento);
                 }else
                 {
@@ -50,6 +60,15 @@ namespace Clases.Pila
                 }
             }else 
             {
+                if(EsVacia())
+                {
+                    ordenAulaLlena.Ejecutar();
+                }
+                if (Cuantos() == 39)
+                {
+                    ordenAulaLlena.Ejecutar();
+                }
+                ordenLlegaAlumno.Ejecutar(elemento);
                 elementosPila.Add(elemento);
             }
         }
@@ -130,6 +149,15 @@ namespace Clases.Pila
             {
                 if (elementosPila.Count < this.tamanio)
                 {
+                    if(EsVacia())
+                    {
+                        ordenAulaLlena.Ejecutar();
+                    }
+                    if (Cuantos() == 39)
+                    {
+                        ordenAulaLlena.Ejecutar();
+                    }
+                    ordenLlegaAlumno.Ejecutar(elemento);
                     elementosPila.Add(elemento);
                 }else
                 {
@@ -137,6 +165,15 @@ namespace Clases.Pila
                 }
             }else 
             {
+                if(EsVacia())
+                {
+                    ordenInicio.Ejecutar();
+                }
+                if (Cuantos() == 39)
+                {
+                    ordenAulaLlena.Ejecutar();
+                }
+                ordenLlegaAlumno.Ejecutar(elemento);
                 elementosPila.Add(elemento);
             }
         }
@@ -146,17 +183,17 @@ namespace Clases.Pila
         }
         public void SetOrdenInicio(OrdenEnAula1 orden)
         {
-            this.orden1 = orden;
+            this.ordenInicio = orden;
         }
 
         public void SetOrdenLlegaAlumno(OrdenEnAula2 orden)
         {
-            this.orden2 = orden;
+            this.ordenLlegaAlumno = orden;
         }
 
         public void SetOrdenAulaLlena(OrdenEnAula1 orden)
         {
-            this.orden1 = orden;
+            this.ordenAulaLlena = orden;
         }
     }
     public class PilaLLenaException : Exception{

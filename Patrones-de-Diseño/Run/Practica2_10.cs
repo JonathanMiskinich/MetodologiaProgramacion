@@ -15,19 +15,19 @@ namespace Practica2_10
            ComparacionPromedio compPromedio = new();
 
            Pila p = new();
-           Helper.LlenarAlumnos(p);
+           Helper.LlenarAlumnos(p, "1");
            Helper.CambiarEstrategia(p, compDni);
            Console.WriteLine("OK");
 
-           Helper.LlenarAlumnos(p);
+           Helper.LlenarAlumnos(p, "1");
            Helper.CambiarEstrategia(p, compLegajo);
            Console.WriteLine("OK");
 
-           Helper.LlenarAlumnos(p);
+           Helper.LlenarAlumnos(p, "1");
            Helper.CambiarEstrategia(p, compNombre);
            Console.WriteLine("OK");
 
-           Helper.LlenarAlumnos(p);
+           Helper.LlenarAlumnos(p, "1");
            Helper.CambiarEstrategia(p, compPromedio);
            Console.WriteLine("OK");
         }

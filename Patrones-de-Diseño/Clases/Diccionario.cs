@@ -10,8 +10,9 @@ namespace Clases.Diccionario
         private List<ClaveValor> listaElementos;
         //Utilizo Clase Numero por que necesito qeu la clave sea Comparable
         private static Numero.Numero claveUnica = new Numero.Numero(0);
-        private OrdenEnAula1 orden1;
-        private OrdenEnAula2 orden2;
+        private OrdenEnAula1 Inicio;
+        private OrdenEnAula1 AulaLlena;
+        private OrdenEnAula2 LlegaAlumno;
         //Constructores
         public Diccionario()
         {
@@ -100,6 +101,13 @@ namespace Clases.Diccionario
         }
         public void Agregar(Comparable elemento)
         {
+            if(this.Cuantos() == 0)
+                this.Inicio.Ejecutar();
+   
+            else if(Cuantos() == 39)
+                this.AulaLlena.Ejecutar();
+                
+            this.LlegaAlumno.Ejecutar(elemento);
             ClaveValor elemAgregar = new(claveUnica, elemento);
             claveUnica.SetValor = claveUnica.VALOR++;
             listaElementos.Add(elemAgregar);
@@ -118,17 +126,17 @@ namespace Clases.Diccionario
         }
         public void SetOrdenInicio(OrdenEnAula1 orden)
         {
-            this.orden1 = orden;
+            this.Inicio = orden;
         }
 
         public void SetOrdenLlegaAlumno(OrdenEnAula2 orden)
         {
-            this.orden2 = orden;
+            this.LlegaAlumno = orden;
         }
 
         public void SetOrdenAulaLlena(OrdenEnAula1 orden)
         {
-            this.orden1 = orden;
+            this.AulaLlena = orden;
         }
     }
 }

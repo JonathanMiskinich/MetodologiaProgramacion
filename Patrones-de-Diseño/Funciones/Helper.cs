@@ -5,6 +5,8 @@ using Clases.Alumnos;
 using PIterator;
 using Interfaces.PStrategy_Comparacion;
 using Clases.Profesor;
+using PFactoryMethod.CreadorAlumnos;
+using Interfaz.IAlumnos;
 
 namespace Funciones
 {
@@ -46,11 +48,12 @@ namespace Funciones
             }
         }
 
-        public static void LlenarAlumnos(Coleccionable coleccionable)
+        public static void LlenarAlumnos(Coleccionable coleccionable, string opcion)
         {
+            CreadorAlumno fabrica = new();
             for (int i = 0; i < 20; i++)
             {
-                Alumno alum = new Alumno(NombreAzar(), i, i, (float)new Random().Next(11));
+                IAlumno alum = (IAlumno)fabrica.CrearAleatorio(opcion);
                 coleccionable.Agregar(alum);
             }
         }

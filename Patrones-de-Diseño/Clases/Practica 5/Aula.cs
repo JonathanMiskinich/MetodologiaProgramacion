@@ -7,6 +7,10 @@ namespace Clases.Aulas
     public class Aula
     {
         private Teacher teacher;
+        public Aula()
+        {
+            this.teacher = new Teacher();
+        }
         public void Comenzar()
         {
             Console.WriteLine("Empezando la clase.");

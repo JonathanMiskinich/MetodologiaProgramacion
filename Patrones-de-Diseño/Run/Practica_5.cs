@@ -1,7 +1,7 @@
-using Clases.Alumnos;
+using Clases.Aulas;
+using Clases.Pila;
 using Funciones;
-using Interfaz.IAlumnos;
-using PFactoryMethod.DecoratorFactorys;
+using PCommand;
 
 namespace Practicas
 {
@@ -9,10 +9,15 @@ namespace Practicas
     {
         public static void Run()
         {
-            AlumnoProxy alum = new AlumnoProxy(Helper.NombreAzar(), new Random().Next(10000), new Random().Next(10000), 0);
-            DecoratorFactory fabricaDecoradores = new DecoratorFactory();
-            IAlumno decorator = fabricaDecoradores.CrearDecorator(alum, "1");
-            Console.WriteLine(decorator.MostrarCalificacion());
+            Aula aula = new();
+
+            Pila pila = new();
+            pila.SetOrdenInicio(new OrdenInicio(aula));
+            pila.SetOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
+            pila.SetOrdenAulaLlena(new OrdenAulaLlena(aula));
+
+            Helper.LlenarAlumnos(pila, "1");
+            Helper.LlenarAlumnos(pila, "2");
         }
     }
 }

@@ -8,8 +8,9 @@ namespace Clases.Cola
     {
         private List<Comparable> elementosCola;
         private byte? tamanioCola = null;
-        private OrdenEnAula1 orden1;
-        private OrdenEnAula2 orden2;
+        private OrdenEnAula1 Inicio;
+        private OrdenEnAula1 AulaLlena;
+        private OrdenEnAula2 LlegaAlumno;
 
         
         // Constructor
@@ -106,6 +107,13 @@ namespace Clases.Cola
             {
                 if (elementosCola.Count < this.tamanioCola)
                 {
+                    if(this.Cuantos() == 0)
+                        this.Inicio.Ejecutar();
+   
+                    else if(Cuantos() == 39)
+                        this.AulaLlena.Ejecutar();
+                    
+                    this.LlegaAlumno.Ejecutar(elemento);
                     elementosCola.Add(elemento);
                 }else
                 {
@@ -113,6 +121,13 @@ namespace Clases.Cola
                 }
             }else 
             {
+                if(this.Cuantos() == 0)
+                    this.Inicio.Ejecutar();
+   
+                else if(Cuantos() == 39)
+                    this.AulaLlena.Ejecutar();
+                    
+                this.LlegaAlumno.Ejecutar(elemento);
                 elementosCola.Add(elemento);
             }
         }
@@ -123,17 +138,17 @@ namespace Clases.Cola
 
         public void SetOrdenInicio(OrdenEnAula1 orden)
         {
-            this.orden1 = orden;
+            this.Inicio = orden;
         }
 
         public void SetOrdenLlegaAlumno(OrdenEnAula2 orden)
         {
-            this.orden2 = orden;
+            this.LlegaAlumno = orden;
         }
 
         public void SetOrdenAulaLlena(OrdenEnAula1 orden)
         {
-            this.orden1 = orden;
+            this.AulaLlena = orden;
         }
     }
     public class ColaLLenaException : Exception{

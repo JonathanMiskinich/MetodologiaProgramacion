@@ -12,7 +12,7 @@ namespace Practica3_14
         public static void Run()
         {
             Pila pila = new();
-            Helper.LlenarAlumnos(pila);
+            Helper.LlenarAlumnos(pila, "1");
 
             Profesor profesor = new("Juan", 23, 23);
             IIterator iterador = pila.CrearIterador();
