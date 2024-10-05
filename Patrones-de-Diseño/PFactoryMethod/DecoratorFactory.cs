@@ -30,9 +30,9 @@ namespace PFactoryMethod.DecoratorFactorys
             }
             return decorador;
         }
-        public IAlumno CrearDecoratorAleatorio(string opcionDecorator)
+        public IAlumno CrearDecoratorAleatorio(string opcionDecorator, string opcionAlumno)
         {
-            IAlumno alumno = (IAlumno)base.CrearAleatorio("1");
+            IAlumno alumno = (IAlumno)base.CrearAleatorio(opcionAlumno);
             IAlumno decorador = null;
 
             switch (opcionDecorator)

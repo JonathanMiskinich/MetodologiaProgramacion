@@ -6,6 +6,7 @@ using Funciones;
 using Clases.Alumnos;
 using Clases.alumnoMuyEstudioso;
 using Interfaz.IAlumnos;
+using Alumnos;
 
 namespace PFactoryMethod.CreadorAlumnos
 {
@@ -31,6 +32,9 @@ namespace PFactoryMethod.CreadorAlumnos
                     break;
                 case "3":
                     alum = new AlumnoProxy(nombre,dni,legajo,promedio);
+                    break;
+                case "4":
+                    alum = new AlumnoCompuesto();
                     break;
                 default:
                     break;

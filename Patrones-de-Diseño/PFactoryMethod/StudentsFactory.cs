@@ -18,7 +18,7 @@ namespace PFactoryMethod.StudentFactorys
         public Student CrearStudentDecorado(string opcion)
         {
             DecoratorFactory fabricaDecoradores = new();
-            IAlumno decorador = fabricaDecoradores.CrearDecoratorAleatorio("1");
+            IAlumno decorador = fabricaDecoradores.CrearDecoratorAleatorio("1", opcion);
             decorador = fabricaDecoradores.CrearDecorator(decorador, "2"); 
             decorador = fabricaDecoradores.CrearDecorator(decorador, "3"); 
             decorador = fabricaDecoradores.CrearDecorator(decorador, "4"); 

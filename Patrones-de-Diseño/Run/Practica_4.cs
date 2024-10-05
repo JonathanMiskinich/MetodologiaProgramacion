@@ -46,7 +46,7 @@ namespace Practica_n4
                 Student stud = fabrica.CrearStudentDecorado("2");
                 profesor.goToClass(stud);
             }
-
+            
             profesor.teachingAClass();
         }
     }

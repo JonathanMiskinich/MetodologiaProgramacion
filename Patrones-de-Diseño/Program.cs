@@ -32,6 +32,9 @@ namespace Program
                     case "5":
                         Practica_5.Run();
                         break;
+                    case "6":
+                        Practica_6.ClaseConCompuesto();
+                        break;
                     default:
                         break;
                 }
@@ -49,6 +52,7 @@ namespace Program
             Console.WriteLine("2 - Patron Observer Alumno / Profesor (Practica 3)");
             Console.WriteLine("3 - Implementacion Patron Adapter (Practica 4 - ejercicio 4)");
             Console.WriteLine("4 - Patron Adapter con Decorator");
+            Console.WriteLine("6 - Patron Compuesto - Crear Clase");
             Console.WriteLine("9 - Salir");
             Console.WriteLine("---------");
         }
