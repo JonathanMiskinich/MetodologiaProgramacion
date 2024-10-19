@@ -38,49 +38,6 @@ namespace IColeccionable.Pilas
             return new IteradorPila(this);
         }
         // Metodos
-        public void Apilar(Comparable elemento)
-        {
-            if (this.tamanio != null)
-            {
-                if (elementosPila.Count < this.tamanio)
-                {
-                    if(EsVacia())
-                    {
-                        ordenAulaLlena.Ejecutar();
-                    }
-                    if (Cuantos() == 39)
-                    {
-                        ordenAulaLlena.Ejecutar();
-                    }
-                    ordenLlegaAlumno.Ejecutar(elemento);
-                    elementosPila.Add(elemento);
-                }else
-                {
-                    throw new PilaLLenaException();
-                }
-            }else 
-            {
-                if(EsVacia())
-                {
-                    ordenAulaLlena.Ejecutar();
-                }
-                if (Cuantos() == 39)
-                {
-                    ordenAulaLlena.Ejecutar();
-                }
-                ordenLlegaAlumno.Ejecutar(elemento);
-                elementosPila.Add(elemento);
-            }
-        }
-        public Comparable DesApilar()
-        {
-            Comparable elementoDeLaPila = elementosPila[elementosPila.Count - 1];
-
-            this.elementosPila.RemoveAt(elementosPila.Count - 1);
-
-            return elementoDeLaPila;
-        }
-
         public Comparable Top()
         {
             return this.elementosPila[elementosPila.Count - 1];
@@ -151,13 +108,16 @@ namespace IColeccionable.Pilas
                 {
                     if(EsVacia())
                     {
-                        ordenAulaLlena.Ejecutar();
+                        if (ordenInicio != null)
+                            ordenInicio.Ejecutar();
                     }
                     if (Cuantos() == 39)
                     {
-                        ordenAulaLlena.Ejecutar();
+                        if (ordenAulaLlena != null)
+                            ordenAulaLlena.Ejecutar();
                     }
-                    ordenLlegaAlumno.Ejecutar(elemento);
+                    if (ordenLlegaAlumno != null)
+                        ordenLlegaAlumno.Ejecutar(elemento);
                     elementosPila.Add(elemento);
                 }else
                 {
@@ -167,13 +127,16 @@ namespace IColeccionable.Pilas
             {
                 if(EsVacia())
                 {
-                    ordenInicio.Ejecutar();
+                    if (ordenInicio != null)
+                        ordenInicio.Ejecutar();
                 }
                 if (Cuantos() == 39)
                 {
-                    ordenAulaLlena.Ejecutar();
+                    if (ordenAulaLlena != null)
+                        ordenAulaLlena.Ejecutar();
                 }
-                ordenLlegaAlumno.Ejecutar(elemento);
+                if (ordenLlegaAlumno != null)
+                    ordenLlegaAlumno.Ejecutar(elemento);
                 elementosPila.Add(elemento);
             }
         }

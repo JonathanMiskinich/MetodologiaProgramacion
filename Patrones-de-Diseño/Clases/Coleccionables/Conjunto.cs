@@ -63,12 +63,19 @@ namespace IColeccionable.Conjuntos
             if (!this.Contiene(elemento))
             {
                 if(this.Cuantos() == 0)
-                    this.Inicio.Ejecutar();
-   
+                {
+                    if (Inicio != null)
+                        this.Inicio.Ejecutar();
+                }
                 else if(Cuantos() == 39)
-                    this.AulaLlena.Ejecutar();
-                    
-                this.LlegaAlumno.Ejecutar(elemento);
+                {
+                    if (AulaLlena != null)
+                        this.AulaLlena.Ejecutar();
+                }
+
+                if (LlegaAlumno != null)   
+                    this.LlegaAlumno.Ejecutar(elemento);
+                
                 elementos.Add(elemento);
             }
         }

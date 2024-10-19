@@ -109,12 +109,18 @@ namespace IColeccionable.Colas
                 if (elementosCola.Count < this.tamanioCola)
                 {
                     if(this.Cuantos() == 0)
-                        this.Inicio.Ejecutar();
-   
+                    { 
+                        if (Inicio != null)
+                            this.Inicio.Ejecutar();
+                    }
                     else if(Cuantos() == 39)
-                        this.AulaLlena.Ejecutar();
+                    {
+                        if (AulaLlena != null)
+                            this.AulaLlena.Ejecutar();
+                    }
+                    if (LlegaAlumno != null)
+                        this.LlegaAlumno.Ejecutar(elemento);
                     
-                    this.LlegaAlumno.Ejecutar(elemento);
                     elementosCola.Add(elemento);
                 }else
                 {
@@ -123,12 +129,19 @@ namespace IColeccionable.Colas
             }else 
             {
                 if(this.Cuantos() == 0)
-                    this.Inicio.Ejecutar();
-   
+                { 
+                    if (Inicio != null)
+                        this.Inicio.Ejecutar();
+                }
                 else if(Cuantos() == 39)
-                    this.AulaLlena.Ejecutar();
-                    
-                this.LlegaAlumno.Ejecutar(elemento);
+                {
+                    if (AulaLlena != null)
+                        this.AulaLlena.Ejecutar();
+                }
+                
+                if (LlegaAlumno != null)    
+                    this.LlegaAlumno.Ejecutar(elemento);
+                
                 elementosCola.Add(elemento);
             }
         }

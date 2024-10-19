@@ -1,7 +1,9 @@
-﻿using Practica3_14;
-using Practica2_10;
-using Practica_n4;
+﻿using Practica_n4;
 using Practicas;
+using Strategy;
+using Iterator;
+using PObserver;
+using PAdapter;
 
 namespace Program
 {
@@ -18,22 +20,22 @@ namespace Program
                 switch (opc)
                 {
                     case "1":
-                        Practica_2.Run();
+                        StrategyRun.Run();
                         break;
                     case "2":
-                        Practica_3.Run();
+                        IteratorRun.Run();
                         break;
                     case "3":
-                        Practica_4.FormarClase();
+                        IteratorRun.ConStrategy();
                         break;
                     case "4":
-                        Practica_4.StudentConDecorator();
+                        ObserverRun.Run();
                         break;
                     case "5":
-                        Practica_5.Run();
+                        AdapterRun.Run();
                         break;
                     case "6":
-                        Practica_6.ClaseConCompuesto();
+                        DecoratorRun.Run();
                         break;
                     default:
                         break;
@@ -48,10 +50,10 @@ namespace Program
         static void Menu()
         {
             Console.WriteLine("Menu de opciones:");
-            Console.WriteLine("1 - Estrategias comparacion Alumnos (Practica 2)");
-            Console.WriteLine("2 - Patron Observer Alumno / Profesor (Practica 3)");
-            Console.WriteLine("3 - Implementacion Patron Adapter (Practica 4 - ejercicio 4)");
-            Console.WriteLine("4 - Patron Adapter con Decorator");
+            Console.WriteLine("1 - Patron Strategy.");
+            Console.WriteLine("2 - Patron Iterator.");
+            Console.WriteLine("3 - Patron Iterator Con Strategy.");
+            Console.WriteLine("4 - Patron Observer.");
             Console.WriteLine("6 - Patron Compuesto - Crear Clase");
             Console.WriteLine("9 - Salir");
             Console.WriteLine("---------");

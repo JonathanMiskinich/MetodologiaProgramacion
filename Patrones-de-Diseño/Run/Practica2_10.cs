@@ -9,7 +9,7 @@ namespace Practica2_10
     {
         public static void Run()
         {
-        ComparacionDni compDni = new();
+            ComparacionDni compDni = new();
            ComparacionLegajo compLegajo = new();
            ComparacionNombre compNombre = new();
            ComparacionPromedio compPromedio = new();

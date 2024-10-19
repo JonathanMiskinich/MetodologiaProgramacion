@@ -104,12 +104,19 @@ namespace IColeccionable.Diccionarios
         public void Agregar(Comparable elemento)
         {
             if(this.Cuantos() == 0)
-                this.Inicio.Ejecutar();
-   
+            {
+                if (Inicio != null)
+                    this.Inicio.Ejecutar();
+            }
             else if(Cuantos() == 39)
-                this.AulaLlena.Ejecutar();
+            {
+                if (AulaLlena != null)
+                    AulaLlena.Ejecutar();
+            }
+
+            if (LlegaAlumno != null)    
+                this.LlegaAlumno.Ejecutar(elemento);
                 
-            this.LlegaAlumno.Ejecutar(elemento);
             ClaveValor elemAgregar = new(claveUnica, elemento);
             claveUnica.SetValor = claveUnica.VALOR++;
             listaElementos.Add(elemAgregar);
