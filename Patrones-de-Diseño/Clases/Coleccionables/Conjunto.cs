@@ -1,10 +1,9 @@
-using System.Dynamic;
 using IComparable;
 using PCommand;
 using PIterator;
 using IColeccionable;
 
-namespace Clases.Conjunto
+namespace IColeccionable.Conjunto
 {
     public class Conjunto : Coleccionable, Ordenable
     {

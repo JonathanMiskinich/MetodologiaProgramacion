@@ -1,5 +1,5 @@
 //Resolucion del ejercicio 10 de la practica 2.
-using Clases.Pila;
+using IColeccionable.Pila;
 using Funciones;
 using Alumnos.Comparaciones;
 

@@ -3,7 +3,7 @@ using PCommand;
 using PIterator;
 using IColeccionable;
 
-namespace Clases.Cola
+namespace IColeccionable.Cola
 {
     public class Cola : Coleccionable, Ordenable
     {

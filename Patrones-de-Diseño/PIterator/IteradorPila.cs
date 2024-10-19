@@ -1,5 +1,5 @@
 using IComparable;
-using Clases.Pila;
+using IColeccionable.Pila;
 
 namespace PIterator
 {

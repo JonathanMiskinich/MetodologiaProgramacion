@@ -1,5 +1,5 @@
 using IComparable;
-using Clases.Diccionario;
+using IColeccionable.Diccionario;
 using Clases.Clave_Valor;
 
 namespace PIterator

@@ -1,7 +1,6 @@
 using IComparable;
-using System.Collections.Generic;
 
-namespace Clases.Numero
+namespace IComparable.Numero
 {
     public class Numero : Comparable
     {

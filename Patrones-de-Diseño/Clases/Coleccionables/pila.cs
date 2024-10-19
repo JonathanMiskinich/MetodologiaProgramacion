@@ -1,10 +1,8 @@
 using IComparable;
 using PIterator;
-using System;
 using PCommand;
-using IColeccionable;
 
-namespace Clases.Pila
+namespace IColeccionable.Pila
 {
     public class Pila : Coleccionable, Ordenable
     {

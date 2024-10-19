@@ -1,5 +1,5 @@
 //Resolucion del ejercicio 14 de la practica 3
-using Clases.Pila;
+using IColeccionable.Pila;
 using Clases.Profesor;
 using Funciones;
 using PIterator;

@@ -1,5 +1,5 @@
 using IColeccionable;
-using Clases.Numero;
+using IComparable.Numero;
 using Interfaces.Clases.Persona;
 using IAlumnos.Regular;
 using PIterator;

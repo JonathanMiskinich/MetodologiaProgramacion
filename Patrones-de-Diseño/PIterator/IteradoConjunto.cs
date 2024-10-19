@@ -1,5 +1,5 @@
 using IComparable;
-using Clases.Conjunto;
+using IColeccionable.Conjunto;
 
 namespace PIterator
 {

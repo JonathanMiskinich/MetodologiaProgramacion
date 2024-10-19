@@ -1,5 +1,5 @@
 using Clases.Aulas;
-using Clases.Pila;
+using IColeccionable.Pila;
 using Funciones;
 using MetodologíasDeProgramaciónI;
 using PCommand;

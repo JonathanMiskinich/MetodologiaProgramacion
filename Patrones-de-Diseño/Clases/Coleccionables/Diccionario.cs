@@ -1,16 +1,16 @@
 using Clases.Clave_Valor;
+using IComparable.Numero;
 using IComparable;
 using PCommand;
 using PIterator;
-using IColeccionable;
 
-namespace Clases.Diccionario
+namespace IColeccionable.Diccionario
 {
     public class Diccionario : Coleccionable, Ordenable
     {
         private List<ClaveValor> listaElementos;
         //Utilizo Clase Numero por que necesito qeu la clave sea Comparable
-        private static Numero.Numero claveUnica = new Numero.Numero(0);
+        private static Numero claveUnica = new Numero(0);
         private OrdenEnAula1 Inicio;
         private OrdenEnAula1 AulaLlena;
         private OrdenEnAula2 LlegaAlumno;
