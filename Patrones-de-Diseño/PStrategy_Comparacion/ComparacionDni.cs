@@ -1,7 +1,7 @@
 using Clases.Alumnos;
 using Interfaz.IAlumnos;
 
-namespace Interfaces.PStrategy_Comparacion
+namespace Alumnos.Comparacion
 {
     public class ComparacionDni : Comparacion
     {

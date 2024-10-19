@@ -3,7 +3,7 @@ using Clases.Numero;
 using Interfaces.Clases.Persona;
 using Clases.Alumnos;
 using PIterator;
-using Interfaces.PStrategy_Comparacion;
+using Alumnos.Comparacion;
 using Clases.Profesor;
 using PFactoryMethod.CreadorAlumnos;
 using Interfaz.IAlumnos;

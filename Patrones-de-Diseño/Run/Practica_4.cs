@@ -5,7 +5,7 @@ using PDecorator.ConcreteDecorator;
 using Interfaz.IAlumnos;
 using PFactoryMethod.CreadorAlumnos;
 using PFactoryMethod.StudentFactorys;
-using Interfaces.PStrategy_Comparacion;
+using Alumnos.Comparacion;
 
 namespace Practica_n4
 {

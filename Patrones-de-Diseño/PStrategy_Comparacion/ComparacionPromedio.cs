@@ -1,6 +1,6 @@
 using Interfaz.IAlumnos;
 
-namespace Interfaces.PStrategy_Comparacion
+namespace Alumnos.Comparacion
 {
     public class ComparacionPromedio : Comparacion
     {

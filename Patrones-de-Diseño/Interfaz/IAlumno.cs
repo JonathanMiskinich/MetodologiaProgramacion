@@ -1,5 +1,5 @@
 using Interfaces_Practica1;
-using Interfaces.PStrategy_Comparacion;
+using Alumnos.Comparacion;
 
 namespace Interfaz.IAlumnos
 {

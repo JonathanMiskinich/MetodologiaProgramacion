@@ -1,4 +1,4 @@
-using Interfaces.PStrategy_Comparacion;
+using Alumnos.Comparacion;
 using Interfaces_Practica1;
 using Interfaz.IAlumnos;
 

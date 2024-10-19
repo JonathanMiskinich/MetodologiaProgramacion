@@ -8,7 +8,7 @@ namespace Run.Prueba
     {
         public static void Run()
         {
-            
+            String p = new String();
 
         }
     }
