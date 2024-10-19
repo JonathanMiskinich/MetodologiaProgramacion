@@ -1,5 +1,5 @@
 using Alumnos.Comparaciones;
-using Interfaces_Practica1;
+using IComparable;
 using IAlumnos;
 
 namespace IAlumnos.Compuesto

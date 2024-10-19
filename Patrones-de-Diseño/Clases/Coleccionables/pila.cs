@@ -1,7 +1,8 @@
-using Interfaces_Practica1;
+using IComparable;
 using PIterator;
 using System;
 using PCommand;
+using IColeccionable;
 
 namespace Clases.Pila
 {

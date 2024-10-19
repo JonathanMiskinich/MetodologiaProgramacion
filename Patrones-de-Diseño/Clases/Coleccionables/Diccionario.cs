@@ -1,7 +1,8 @@
 using Clases.Clave_Valor;
-using Interfaces_Practica1;
+using IComparable;
 using PCommand;
 using PIterator;
+using IColeccionable;
 
 namespace Clases.Diccionario
 {
@@ -69,7 +70,7 @@ namespace Clases.Diccionario
                     minimo = item.getValue;
                 else
                 {
-                    if (item.getValue is IComparable value1 && minimo is IComparable value2)
+                    if (item.getValue is System.IComparable value1 && minimo is System.IComparable value2)
                     {
                         if (value1.CompareTo(value2) < 0)
                             minimo = item.getValue;
@@ -89,7 +90,7 @@ namespace Clases.Diccionario
                     maximo = item.getValue;
                 else
                 {
-                    if (item.getValue is IComparable value1 && maximo is IComparable value2)
+                    if (item.getValue is System.IComparable value1 && maximo is System.IComparable value2)
                     {
                         if (value1.CompareTo(value2) > 0)
                             maximo = item.getValue;
@@ -116,7 +117,7 @@ namespace Clases.Diccionario
         {
             foreach (ClaveValor item in listaElementos)
             {
-                if (item.getValue is IComparable value1 && elemento is IComparable value2)
+                if (item.getValue is System.IComparable value1 && elemento is System.IComparable value2)
                     {
                         if (value1.CompareTo(value2) == 0)
                             return true;

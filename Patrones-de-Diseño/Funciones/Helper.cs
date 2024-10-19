@@ -1,4 +1,4 @@
-using Interfaces_Practica1;
+using IColeccionable;
 using Clases.Numero;
 using Interfaces.Clases.Persona;
 using IAlumnos.Regular;

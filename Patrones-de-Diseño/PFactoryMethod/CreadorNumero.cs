@@ -1,4 +1,4 @@
-using Interfaces_Practica1;
+using IComparable;
 using PFactoryMethod.CreadorComparables;
 using Clases.DatosAzar;
 using Clases.LectorDeDatos;

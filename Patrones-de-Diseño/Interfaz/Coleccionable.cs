@@ -1,15 +1,8 @@
-/*Impletación de diferentes interfaces de la práctica 1*/
 using PIterator;
-namespace Interfaces_Practica1
+using IComparable;
+
+namespace IColeccionable
 {
-    public interface Comparable
-    {
-        bool sosIgual(Comparable comparacion);
-        bool sosMenor(Comparable comparacion);
-        bool sosMayor(Comparable comparacion);
-
-    }
-
     public interface Coleccionable
     {
         IIterator CrearIterador();

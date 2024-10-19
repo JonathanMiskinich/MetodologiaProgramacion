@@ -1,6 +1,3 @@
-using Alumnos.Comparaciones;
-using Interfaces_Practica1;
-using IAlumnos;
 using IAlumnos.Regular;
 
 namespace IAlumnos.MuyEstudioso

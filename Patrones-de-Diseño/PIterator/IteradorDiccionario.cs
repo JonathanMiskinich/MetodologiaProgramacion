@@ -1,4 +1,4 @@
-using Interfaces_Practica1;
+using IComparable;
 using Clases.Diccionario;
 using Clases.Clave_Valor;
 

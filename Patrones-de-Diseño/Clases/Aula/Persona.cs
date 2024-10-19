@@ -1,4 +1,4 @@
-using Interfaces_Practica1;
+using IComparable;
 
 namespace Interfaces.Clases.Persona
 {

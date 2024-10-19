@@ -1,4 +1,4 @@
-using Interfaces_Practica1;
+using IComparable;
 using PFactoryMethod.CreadorAlumnos;
 using IAlumnos;
 using PDecorator.ConcreteDecorator;

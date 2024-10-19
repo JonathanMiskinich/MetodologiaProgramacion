@@ -1,4 +1,4 @@
-using Interfaces_Practica1;
+using IComparable;
 using System.Collections.Generic;
 
 namespace Clases.Numero
