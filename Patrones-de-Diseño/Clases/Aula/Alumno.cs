@@ -2,9 +2,8 @@ using Interfaces.Clases.Persona;
 using Interfaces_Practica1;
 using Alumnos.Comparaciones;
 using PObserver.Suscriptora;
-using IAlumnos;
 
-namespace Clases.Alumnos
+namespace IAlumnos.Regular
 {
     public class Alumno : Persona, ISuscriptora, IAlumno
     {

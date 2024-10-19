@@ -1,4 +1,4 @@
-using Alumnos;
+using IAlumnos.Compuesto;
 using IAlumnos;
 using MetodologíasDeProgramaciónI;
 using PAdapter.alumnoAdapter;

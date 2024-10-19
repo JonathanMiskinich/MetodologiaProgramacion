@@ -1,9 +1,9 @@
 //Resolucion del ejercicio 14 de la practica 3
-using Clases.Alumnos;
 using Clases.Pila;
 using Clases.Profesor;
 using Funciones;
 using PIterator;
+using IAlumnos.Regular;
 
 namespace Practica3_14
 {

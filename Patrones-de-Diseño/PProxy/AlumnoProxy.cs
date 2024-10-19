@@ -1,8 +1,8 @@
 using Alumnos.Comparaciones;
 using Interfaces_Practica1;
-using IAlumnos;
+using IAlumnos.Regular;
 
-namespace Clases.Alumnos
+namespace IAlumnos.Proxy
 {
     public class AlumnoProxy : IAlumno
     {

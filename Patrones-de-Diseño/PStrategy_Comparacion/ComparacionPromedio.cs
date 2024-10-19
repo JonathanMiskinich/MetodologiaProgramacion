@@ -1,4 +1,4 @@
-using IAlumnos.IAlumnos;
+using IAlumnos;
 
 namespace Alumnos.Comparaciones
 {

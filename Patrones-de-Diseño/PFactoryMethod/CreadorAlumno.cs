@@ -3,10 +3,12 @@ using PFactoryMethod.CreadorComparables;
 using Clases.DatosAzar;
 using Clases.LectorDeDatos;
 using Funciones;
-using Clases.Alumnos;
-using Clases.alumnoMuyEstudioso;
-using IAlumnos.IAlumnos;
-using Alumnos;
+using IAlumnos;
+using IAlumnos.Regular;
+using IAlumnos.Proxy;
+using IAlumnos.MuyEstudioso;
+using IAlumnos.Compuesto;
+
 
 namespace PFactoryMethod.CreadorAlumnos
 {

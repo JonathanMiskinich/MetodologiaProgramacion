@@ -2,7 +2,7 @@ using Alumnos.Comparaciones;
 using Interfaces_Practica1;
 using IAlumnos;
 
-namespace Alumnos
+namespace IAlumnos.Compuesto
 {
     public class AlumnoCompuesto : IAlumno
     {

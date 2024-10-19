@@ -1,9 +1,9 @@
 using Alumnos.Comparaciones;
 using Interfaces_Practica1;
 using IAlumnos;
-using Clases.Alumnos;
+using IAlumnos.Regular;
 
-namespace Clases.alumnoMuyEstudioso
+namespace IAlumnos.MuyEstudioso
 {
     public class AlumnoMuyEstudioso : Alumno, IAlumno
     {
