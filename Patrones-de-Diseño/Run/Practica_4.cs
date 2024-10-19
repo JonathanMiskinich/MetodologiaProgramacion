@@ -2,7 +2,7 @@ using MetodologíasDeProgramaciónI;
 using Clases.alumnoMuyEstudioso;
 using PAdapter.alumnoAdapter;
 using PDecorator.ConcreteDecorator;
-using Interfaz.IAlumnos;
+using IAlumnos;
 using PFactoryMethod.CreadorAlumnos;
 using PFactoryMethod.StudentFactorys;
 using Alumnos.Comparaciones;

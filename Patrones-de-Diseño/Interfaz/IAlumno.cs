@@ -1,7 +1,7 @@
 using Interfaces_Practica1;
 using Alumnos.Comparaciones;
 
-namespace Interfaz.IAlumnos
+namespace IAlumnos
 {
     public interface IAlumno : Comparable
     {

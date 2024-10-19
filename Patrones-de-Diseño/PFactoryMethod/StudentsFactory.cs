@@ -2,7 +2,7 @@ using PFactoryMethod.CreadorAlumnos;
 using MetodologíasDeProgramaciónI;
 using PDecorator.ConcreteDecorator;
 using PAdapter.alumnoAdapter;
-using Interfaz.IAlumnos;
+using IAlumnos;
 using  PFactoryMethod.DecoratorFactorys;
 
 namespace PFactoryMethod.StudentFactorys

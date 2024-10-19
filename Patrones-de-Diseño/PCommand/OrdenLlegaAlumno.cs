@@ -1,6 +1,6 @@
 using Clases.Aulas;
 using Interfaces_Practica1;
-using Interfaz.IAlumnos;
+using IAlumnos;
 
 namespace PCommand
 {

@@ -5,7 +5,7 @@ using Clases.LectorDeDatos;
 using Funciones;
 using Clases.Alumnos;
 using Clases.alumnoMuyEstudioso;
-using Interfaz.IAlumnos;
+using IAlumnos.IAlumnos;
 using Alumnos;
 
 namespace PFactoryMethod.CreadorAlumnos

@@ -1,5 +1,5 @@
 using MetodologíasDeProgramaciónI;
-using Interfaz.IAlumnos;
+using IAlumnos;
 
 
 namespace PAdapter.alumnoAdapter

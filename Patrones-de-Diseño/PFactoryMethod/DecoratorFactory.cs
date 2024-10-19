@@ -1,6 +1,6 @@
 using Interfaces_Practica1;
 using PFactoryMethod.CreadorAlumnos;
-using Interfaz.IAlumnos;
+using IAlumnos;
 using PDecorator.ConcreteDecorator;
 
 namespace PFactoryMethod.DecoratorFactorys

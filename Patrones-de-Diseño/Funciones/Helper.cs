@@ -6,7 +6,7 @@ using PIterator;
 using Alumnos.Comparaciones;
 using Clases.Profesor;
 using PFactoryMethod.CreadorAlumnos;
-using Interfaz.IAlumnos;
+using IAlumnos;
 
 namespace Funciones
 {

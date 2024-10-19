@@ -1,5 +1,5 @@
 using PDecorator.BaseDecorators;
-using Interfaz.IAlumnos;
+using IAlumnos;
 
 namespace PDecorator.ConcreteDecorator
 {

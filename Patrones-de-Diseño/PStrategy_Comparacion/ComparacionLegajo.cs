@@ -1,5 +1,5 @@
 using Clases.Alumnos;
-using Interfaz.IAlumnos;
+using IAlumnos;
 
 namespace Alumnos.Comparaciones
 {

@@ -1,4 +1,4 @@
-using Interfaz.IAlumnos;
+using IAlumnos;
 using MetodologíasDeProgramaciónI;
 using PAdapter.alumnoAdapter;
 
