@@ -1,6 +1,6 @@
 using Interfaces.Clases.Persona;
 using Interfaces_Practica1;
-using Alumnos.Comparacion;
+using Alumnos.Comparaciones;
 using PObserver.Suscriptora;
 using Interfaz.IAlumnos;
 

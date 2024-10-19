@@ -1,7 +1,7 @@
 using System;
 using Interfaz.IAlumnos;
 
-namespace Alumnos.Comparacion
+namespace Alumnos.Comparaciones
 {
     public interface Comparacion
     {

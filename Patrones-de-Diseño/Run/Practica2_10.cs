@@ -1,7 +1,7 @@
 //Resolucion del ejercicio 10 de la practica 2.
 using Clases.Pila;
 using Funciones;
-using Alumnos.Comparacion;
+using Alumnos.Comparaciones;
 
 namespace Practica2_10
 {

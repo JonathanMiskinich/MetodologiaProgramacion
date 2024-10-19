@@ -1,7 +1,7 @@
 using Clases.Alumnos;
 using Interfaz.IAlumnos;
 
-namespace Alumnos.Comparacion
+namespace Alumnos.Comparaciones
 {
     public class ComparacionCalificacion : Comparacion
     {

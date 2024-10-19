@@ -1,6 +1,6 @@
 using Interfaz.IAlumnos;
 
-namespace Alumnos.Comparacion
+namespace Alumnos.Comparaciones
 {
     public class ComparacionPromedio : Comparacion
     {
