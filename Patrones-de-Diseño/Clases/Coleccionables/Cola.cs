@@ -1,9 +1,9 @@
 using IComparable;
 using PCommand;
+using PIterator.Colas;
 using PIterator;
-using IColeccionable;
 
-namespace IColeccionable.Cola
+namespace IColeccionable.Colas
 {
     public class Cola : Coleccionable, Ordenable
     {

@@ -1,7 +1,7 @@
 using IComparable;
-using IColeccionable.Conjunto;
+using IColeccionable.Conjuntos;
 
-namespace PIterator
+namespace PIterator.Conjuntos
 {
     public class IteradorConjunto : IIterator
     {

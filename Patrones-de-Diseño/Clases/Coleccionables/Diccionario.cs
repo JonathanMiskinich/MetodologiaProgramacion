@@ -3,8 +3,9 @@ using IComparable.Numero;
 using IComparable;
 using PCommand;
 using PIterator;
+using PIterator.Diccionarios;
 
-namespace IColeccionable.Diccionario
+namespace IColeccionable.Diccionarios
 {
     public class Diccionario : Coleccionable, Ordenable
     {

@@ -1,7 +1,7 @@
 using IComparable;
 using IColeccionable.Pila;
 
-namespace PIterator
+namespace PIterator.Pilas
 {
     public class IteradorPila : IIterator
     {

@@ -1,9 +1,9 @@
 using IComparable;
 using PCommand;
+using PIterator.Conjuntos;
 using PIterator;
-using IColeccionable;
 
-namespace IColeccionable.Conjunto
+namespace IColeccionable.Conjuntos
 {
     public class Conjunto : Coleccionable, Ordenable
     {

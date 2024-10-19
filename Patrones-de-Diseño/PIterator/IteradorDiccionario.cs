@@ -1,8 +1,7 @@
-using IComparable;
-using IColeccionable.Diccionario;
+using IColeccionable.Diccionarios;
 using Clases.Clave_Valor;
 
-namespace PIterator
+namespace PIterator.Diccionarios
 {
     public class IteradorDiccionario : IIterator
     {

@@ -1,7 +1,7 @@
 using IComparable;
-using IColeccionable.Cola;
+using IColeccionable.Colas;
 
-namespace PIterator
+namespace PIterator.Colas
 {
     public class IteradorCola : IIterator
     {
