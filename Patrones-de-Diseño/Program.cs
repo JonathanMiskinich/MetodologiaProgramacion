@@ -1,9 +1,11 @@
-﻿using Practica_n4;
-using Practicas;
-using Strategy;
+﻿using Strategy;
 using Iterator;
 using PObserver;
 using PAdapter;
+using Decorator;
+using Proxy;
+using PCommand;
+using PComposite;
 
 namespace Program
 {
@@ -15,7 +17,7 @@ namespace Program
             Console.Write("Ingrese una opcion: ");
             string opc = Console.ReadLine();
 
-            while (opc  != "9")
+            while (opc  != "0")
             {
                 switch (opc)
                 {
@@ -35,7 +37,16 @@ namespace Program
                         AdapterRun.Run();
                         break;
                     case "6":
-                        DecoratorRun.Run();
+                        PDecoratorRun.Run();
+                        break;
+                    case "7":
+                        ProxyRun.Run();
+                        break;
+                    case "8":
+                        CommandRun.Run();
+                        break;
+                    case "9":
+                        CompositeRun.Run();
                         break;
                     default:
                         break;
@@ -54,8 +65,12 @@ namespace Program
             Console.WriteLine("2 - Patron Iterator.");
             Console.WriteLine("3 - Patron Iterator Con Strategy.");
             Console.WriteLine("4 - Patron Observer.");
-            Console.WriteLine("6 - Patron Compuesto - Crear Clase");
-            Console.WriteLine("9 - Salir");
+            Console.WriteLine("5 - Patron Adapter");
+            Console.WriteLine("6 - Patron Decorator");
+            Console.WriteLine("7 - Patron Proxy con Decorator");
+            Console.WriteLine("8 - Patron Command");
+            Console.WriteLine("9 - Patron Composite");
+            Console.WriteLine("0 - Salir");
             Console.WriteLine("---------");
         }
     }
