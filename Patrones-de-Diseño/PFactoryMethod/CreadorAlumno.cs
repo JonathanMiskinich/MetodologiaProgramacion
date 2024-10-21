@@ -13,16 +13,16 @@ namespace PFactoryMethod.CreadorAlumnos
 {
     public class CreadorAlumno : ICreadorComparable
     {
-        protected GeneradorDatosAzar datoAleatorio = new();
-        protected LectorDeDatos datoTeclado = new();
-
+        protected IObtenerDatos dato;
 
         public virtual Comparable CrearAleatorio(string opcion)
         {
-            int dni = datoAleatorio.ObtenerNumero(10000);
+            dato = (GeneradorDatosAzar)dato;
+
+            int dni = dato.ObtenerNumero(10000);
             string nombre = Helper.NombreAzar();
-            int legajo = datoAleatorio.ObtenerNumero(10000);
-            float promedio = (float)datoAleatorio.ObtenerNumero(11);
+            int legajo = dato.ObtenerNumero(10000);
+            float promedio = (float)dato.ObtenerNumero(11);
 
             IAlumno alum = null;
 
@@ -48,10 +48,13 @@ namespace PFactoryMethod.CreadorAlumnos
 
         public virtual Comparable CrearPorTeclado(string opcion)
         {
-            int dni = datoTeclado.ObtenerNumero(1000000);
-            string nombre = datoTeclado.ObtenerCadena(20);
-            int legajo = datoTeclado.ObtenerNumero(1000000);
-            float promedio = (float)datoTeclado.ObtenerNumero(11);
+            dato = (LectorDeDatos)dato;
+            dato.SetManejador(new GeneradorDatosAzar());
+
+            int dni = dato.ObtenerNumero(1000000);
+            string nombre = dato.ObtenerCadena(20);
+            int legajo = dato.ObtenerNumero(1000000);
+            float promedio = (float)dato.ObtenerNumero(11);
 
             IAlumno alum = null;
 

@@ -8,15 +8,17 @@ namespace PFactoryMethod.CreadorNumero
 {
     public class CreadorNumero : ICreadorComparable
     {
+        protected IObtenerDatos dato;
         public Comparable CrearAleatorio(string opcion)
         {
-            GeneradorDatosAzar dato = new();
+            dato = (GeneradorDatosAzar)dato;
             return new Numero((sbyte)dato.ObtenerNumero(128));
         }
 
         public Comparable CrearPorTeclado(string opcion)
         {
-            LectorDeDatos dato = new();
+            dato = (LectorDeDatos)dato;
+            dato.SetManejador(new GeneradorDatosAzar());
             return new Numero((sbyte)dato.ObtenerNumero(128));
         }
     }
