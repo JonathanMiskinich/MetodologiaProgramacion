@@ -35,7 +35,19 @@ namespace ObtencionDeDatos
 		public override int ObtenerNumero(int max)
 		{
 			string linea = lector_de_archivos.ReadLine();
-			return int.Parse(linea.Substring(0, linea.IndexOf('\t'))) * max;
+
+			if (double.TryParse(linea.Substring(0, linea.IndexOf('\t')), out double num))
+			{
+				return (int)num * max;
+			}
+			else if (siguienteManejador != null)
+			{
+				return siguienteManejador.ObtenerNumero(max);
+			}
+			else
+			{
+				throw new Exception("No se pudo obtener un numero");
+			}
 		}
 		
 		public override string ObtenerCadena(int cant)
@@ -43,7 +55,19 @@ namespace ObtencionDeDatos
 			string linea = lector_de_archivos.ReadLine();
 			linea = linea.Substring(linea.IndexOf('\t')+1);
 			cant = Math.Min(cant, linea.Length);
-			return linea.Substring(0, cant);
+
+			if (!string.IsNullOrEmpty(linea))
+			{
+				return linea.Substring(0, cant);
+			}
+			else if(siguienteManejador != null)
+			{
+				return siguienteManejador.ObtenerCadena(cant);
+			}
+			else
+			{
+				throw new Exception("No se pudo obetner texto");
+			}	
 		}
     }
 }

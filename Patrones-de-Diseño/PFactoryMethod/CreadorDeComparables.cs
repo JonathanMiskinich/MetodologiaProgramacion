@@ -6,5 +6,6 @@ namespace PFactoryMethod.CreadorComparables
     {
         public Comparable CrearAleatorio(string opcion);
         public Comparable CrearPorTeclado(string opcion);
+        public Comparable CrearPorArchivo(string opcion);
     }
 }

@@ -6,7 +6,7 @@ namespace ObtencionDeDatos
         {
             string datoUser  = Console.ReadLine();
 
-            if (int.TryParse(datoUser, out int num))
+            if (int.TryParse(datoUser, out int num) && num <= max)
                 return num;
             else if (siguienteManejador != null)
             {
@@ -22,7 +22,7 @@ namespace ObtencionDeDatos
         {
             string mensaje = Console.ReadLine();
             
-            if (!string.IsNullOrEmpty(mensaje))
+            if (!string.IsNullOrEmpty(mensaje) && mensaje.Length <= cant)
             {
                 return mensaje;
             }

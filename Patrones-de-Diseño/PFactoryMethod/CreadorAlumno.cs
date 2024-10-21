@@ -46,6 +46,36 @@ namespace PFactoryMethod.CreadorAlumnos
             return alum;
         }
 
+        public Comparable CrearPorArchivo(string opcion)
+        {
+            dato = (LectorDeArchivos)dato;
+            dato.SetManejador(new GeneradorDatosAzar());
+
+            int dni = dato.ObtenerNumero(1000000);
+            string nombre = dato.ObtenerCadena(20);
+            int legajo = dato.ObtenerNumero(1000000);
+            float promedio = (float)dato.ObtenerNumero(11);
+
+            IAlumno alum = null;
+
+            switch (opcion)
+            {
+                case "1":
+                    alum = new Alumno(nombre,dni,legajo,promedio);
+                    break;
+                case "2":
+                    alum = new AlumnoMuyEstudioso(nombre,dni,legajo,promedio);
+                    break;
+                case "3":
+                    alum = new AlumnoProxy(nombre,dni,legajo,promedio);
+                    break;
+                default:
+                    break;
+            }
+            return alum;
+
+        }
+
         public virtual Comparable CrearPorTeclado(string opcion)
         {
             dato = (LectorDeDatos)dato;
