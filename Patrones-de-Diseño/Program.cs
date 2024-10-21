@@ -52,6 +52,9 @@ namespace Program
                     case "10":
                         ChainRun.Run();
                         break;
+                    case "11":
+                        ChainRun.ConFabrica();
+                        break;
                     default:
                         break;
                 }
@@ -75,6 +78,7 @@ namespace Program
             Console.WriteLine("8 - Patron Command");
             Console.WriteLine("9 - Patron Composite");
             Console.WriteLine("10 - Patron Chain Of Resp.");
+            Console.WriteLine("11 - Patron CoR con Fabrica.");
             Console.WriteLine("0 - Salir");
             Console.WriteLine("---------");
         }

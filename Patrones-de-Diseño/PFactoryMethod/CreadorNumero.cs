@@ -15,6 +15,13 @@ namespace PFactoryMethod.CreadorNumero
             return new Numero((sbyte)dato.ObtenerNumero(128));
         }
 
+        public Comparable CrearPorArchivo(string opcion)
+        {
+            dato = (LectorDeArchivos)dato;
+            dato.SetManejador(new GeneradorDatosAzar());
+            return new Numero((sbyte)dato.ObtenerNumero(128));
+        }
+
         public Comparable CrearPorTeclado(string opcion)
         {
             dato = (LectorDeDatos)dato;

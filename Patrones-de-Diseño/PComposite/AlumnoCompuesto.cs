@@ -168,5 +168,16 @@ namespace IAlumnos.Compuesto
 
             return flag;
         }
+
+        public override string ToString()
+        {
+            string mensaje = "";
+
+            foreach (IAlumno hijo in hijos)
+            {
+                mensaje += hijo.ToString() +  "\n";
+            }
+            return mensaje;
+        }
     }
 }
