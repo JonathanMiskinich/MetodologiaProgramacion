@@ -20,6 +20,7 @@ namespace ObtencionDeDatos
 {
 	public class LectorDeArchivos : BaseManejadorDatos
 	{
+		private static LectorDeArchivos instancia;
 		
 		// El alumno deberá agregar la ruta correspondiente a su equipo donde haya guardado el archvo con los datos
 		private const string ruta_archivo = @"D:\Practicas-Facultad\Metodologia\Patrones-de-Diseño\datos.txt";
@@ -27,11 +28,19 @@ namespace ObtencionDeDatos
 		
 		private StreamReader lector_de_archivos;
 		
-		public LectorDeArchivos():base()
+		private LectorDeArchivos():base()
 		{
 			lector_de_archivos = new StreamReader(ruta_archivo);
 		}
-		
+		public static LectorDeArchivos GetInstancia()
+		{
+			if(instancia == null)
+			{
+				instancia = new LectorDeArchivos();
+			}
+
+			return instancia;
+		}
 		public override int ObtenerNumero(int max)
 		{
 			string linea = lector_de_archivos.ReadLine();

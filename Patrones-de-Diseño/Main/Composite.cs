@@ -3,6 +3,7 @@ using Funciones;
 using IAlumnos;
 using IAlumnos.Compuesto;
 using IColeccionable.Pilas;
+using ObtencionDeDatos;
 using PCommand;
 using PFactoryMethod.CreadorAlumnos;
 using PIterator;
@@ -31,7 +32,7 @@ namespace PComposite
                 for(int i = 0; i < 2; i++)
                 {
                     AlumnoCompuesto alumCompuesto = (AlumnoCompuesto)iterador.Actual();
-                    alumCompuesto.AgregarHijo((IAlumno)fabrica.CrearAleatorio("1"));
+                    alumCompuesto.AgregarHijo((IAlumno)fabrica.Crear("1", GeneradorDatosAzar.GetInstancia()));
                 }
                 iterador.Siguiente();
             }

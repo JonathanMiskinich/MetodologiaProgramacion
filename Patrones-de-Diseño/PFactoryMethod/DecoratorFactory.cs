@@ -2,6 +2,7 @@ using IComparable;
 using PFactoryMethod.CreadorAlumnos;
 using IAlumnos;
 using PDecorator.ConcreteDecorator;
+using ObtencionDeDatos;
 
 namespace PFactoryMethod.DecoratorFactorys
 {
@@ -32,7 +33,7 @@ namespace PFactoryMethod.DecoratorFactorys
         }
         public IAlumno CrearDecoratorAleatorio(string opcionDecorator, string opcionAlumno)
         {
-            IAlumno alumno = (IAlumno)base.CrearAleatorio(opcionAlumno);
+            IAlumno alumno = (IAlumno)base.Crear(opcionAlumno, GeneradorDatosAzar.GetInstancia());
             IAlumno decorador = null;
 
             switch (opcionDecorator)
@@ -57,7 +58,10 @@ namespace PFactoryMethod.DecoratorFactorys
 
         public Comparable CrearDecoratorPorTeclado(string opcionAlumno, string opcionDecorator)
         {
-            IAlumno alumno = (IAlumno)base.CrearPorTeclado(opcionAlumno);
+            LectorDeDatos lector = new();
+            lector.SetManejador(GeneradorDatosAzar.GetInstancia());
+
+            IAlumno alumno = (IAlumno)base.Crear(opcionAlumno, lector);
             IAlumno decorador = null;
 
             switch (opcionDecorator)

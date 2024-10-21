@@ -13,7 +13,7 @@ namespace PChainOfResponsability
         public static void Run()
         {
             LectorDeDatos lector = new();
-            GeneradorDatosAzar datosAzar = new();
+            GeneradorDatosAzar datosAzar = GeneradorDatosAzar.GetInstancia();
 
             lector.SetManejador(datosAzar);
 
@@ -24,14 +24,14 @@ namespace PChainOfResponsability
             Console.WriteLine(lector.ObtenerCadena(10));
         }
 
-        public static void ConFabrica()
+        public static void ConSingleton()
         {
             CreadorAlumno fabrica = new();
             Pila pila = new();
 
             LectorDeDatos lector = new();
-            GeneradorDatosAzar datosAzar = new();
-            LectorDeArchivos lectorArchivos = new();
+            GeneradorDatosAzar datosAzar = GeneradorDatosAzar.GetInstancia();
+            LectorDeArchivos lectorArchivos = LectorDeArchivos.GetInstancia();
 
             lectorArchivos.SetManejador(datosAzar);
             lector.SetManejador(lectorArchivos);
@@ -40,7 +40,7 @@ namespace PChainOfResponsability
             {
                 pila.Agregar(fabrica.Crear("1", datosAzar));
             }
-            
+
             Console.WriteLine("Ingrese los datos del alumno: (DNI, Legajo y promedio)");
             pila.Agregar(fabrica.Crear("2", lector));
 

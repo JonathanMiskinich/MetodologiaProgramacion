@@ -9,24 +9,10 @@ namespace PFactoryMethod.CreadorNumero
     public class CreadorNumero : ICreadorComparable
     {
         protected IObtenerDatos dato;
-        public Comparable CrearAleatorio(string opcion)
-        {
-            dato = (GeneradorDatosAzar)dato;
-            return new Numero((sbyte)dato.ObtenerNumero(128));
-        }
 
-        public Comparable CrearPorArchivo(string opcion)
+        public Comparable Crear(string opcion, IObtenerDatos datoGenerador)
         {
-            dato = (LectorDeArchivos)dato;
-            dato.SetManejador(new GeneradorDatosAzar());
-            return new Numero((sbyte)dato.ObtenerNumero(128));
-        }
-
-        public Comparable CrearPorTeclado(string opcion)
-        {
-            dato = (LectorDeDatos)dato;
-            dato.SetManejador(new GeneradorDatosAzar());
-            return new Numero((sbyte)dato.ObtenerNumero(128));
+            return new Numero((sbyte)datoGenerador.ObtenerNumero(128));
         }
     }
 }

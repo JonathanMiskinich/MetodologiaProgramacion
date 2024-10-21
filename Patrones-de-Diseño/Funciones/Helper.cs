@@ -7,6 +7,7 @@ using Alumnos.Comparaciones;
 using Clases.Profesor;
 using PFactoryMethod.CreadorAlumnos;
 using IAlumnos;
+using ObtencionDeDatos;
 
 namespace Funciones
 {
@@ -53,7 +54,7 @@ namespace Funciones
             CreadorAlumno fabrica = new();
             for (int i = 0; i < 20; i++)
             {
-                IAlumno alum = (IAlumno)fabrica.CrearAleatorio(opcion);
+                IAlumno alum = (IAlumno)fabrica.Crear(opcion, GeneradorDatosAzar.GetInstancia());
                 coleccionable.Agregar(alum);
             }
         }

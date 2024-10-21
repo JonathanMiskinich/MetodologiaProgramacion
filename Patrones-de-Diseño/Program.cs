@@ -53,7 +53,7 @@ namespace Program
                         ChainRun.Run();
                         break;
                     case "11":
-                        ChainRun.ConFabrica();
+                        ChainRun.ConSingleton();
                         break;
                     default:
                         break;

@@ -1,6 +1,7 @@
 using IAlumnos.Regular;
 using PFactoryMethod.CreadorAlumnos;
 using Alumnos.Comparaciones;
+using ObtencionDeDatos;
 
 namespace Strategy
 {
@@ -10,8 +11,8 @@ namespace Strategy
         {
             // Practica 2
             CreadorAlumno fabrica = new();
-            Alumno alum = (Alumno)fabrica.CrearAleatorio("1");
-            Alumno alum2 = (Alumno)fabrica.CrearAleatorio("1");
+            Alumno alum = (Alumno)fabrica.Crear("1",GeneradorDatosAzar.GetInstancia());
+            Alumno alum2 = (Alumno)fabrica.Crear("1", GeneradorDatosAzar.GetInstancia());
 
             alum.setMetodoComparar(new ComparacionCalificacion());
             alum2.setMetodoComparar(new ComparacionCalificacion());

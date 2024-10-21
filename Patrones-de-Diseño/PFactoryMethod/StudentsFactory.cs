@@ -4,6 +4,7 @@ using PDecorator.ConcreteDecorator;
 using PAdapter.alumnoAdapter;
 using IAlumnos;
 using  PFactoryMethod.DecoratorFactorys;
+using ObtencionDeDatos;
 
 namespace PFactoryMethod.StudentFactorys
 {
@@ -11,7 +12,7 @@ namespace PFactoryMethod.StudentFactorys
     {
         public Student CrearStudent(string opcion)
         {
-            IAlumno alumno = (IAlumno)base.CrearAleatorio(opcion);
+            IAlumno alumno = (IAlumno)base.Crear(opcion, GeneradorDatosAzar.GetInstancia());
             Student stud = new AlumnoAdapter(alumno);
             return stud;
         }
