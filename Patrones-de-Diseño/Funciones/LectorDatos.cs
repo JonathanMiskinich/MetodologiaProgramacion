@@ -1,17 +1,39 @@
-namespace Clases.LectorDeDatos
+namespace ObtencionDeDatos
 {
-    public static class LectorDeDatos
+    public class LectorDeDatos : BaseManejadorDatos
     {
-        public static int NumeroPorTeclado()
+        public override int ObtenerNumero(int max)
         {
-            int num = int.Parse(Console.ReadLine());
-            return num;
+            string datoUser  = Console.ReadLine();
+
+            if (int.TryParse(datoUser, out int num))
+                return num;
+            else if (siguienteManejador != null)
+            {
+                return siguienteManejador.ObtenerNumero(max);
+            }
+            else
+            {
+                throw new FormatException("No se pudo devolver un numero.");
+            }
         }
 
-        public static string StringPorTeclado()
+        public override string ObtenerCadena(int cant)
         {
             string mensaje = Console.ReadLine();
-            return mensaje;
+            
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                return mensaje;
+            }
+            else if (siguienteManejador !=  null)
+            {
+                return siguienteManejador.ObtenerCadena(cant);
+            }
+            else
+            {
+                throw new Exception("No se pudo devolver una cadena de texto.");
+            }
         }
     }
 

@@ -6,6 +6,7 @@ using Decorator;
 using Proxy;
 using PCommand;
 using PComposite;
+using PChainOfResponsability;
 
 namespace Program
 {
@@ -48,6 +49,9 @@ namespace Program
                     case "9":
                         CompositeRun.Run();
                         break;
+                    case "10":
+                        ChainRun.Run();
+                        break;
                     default:
                         break;
                 }
@@ -70,6 +74,7 @@ namespace Program
             Console.WriteLine("7 - Patron Proxy con Decorator");
             Console.WriteLine("8 - Patron Command");
             Console.WriteLine("9 - Patron Composite");
+            Console.WriteLine("10 - Patron Chain Of Resp.");
             Console.WriteLine("0 - Salir");
             Console.WriteLine("---------");
         }

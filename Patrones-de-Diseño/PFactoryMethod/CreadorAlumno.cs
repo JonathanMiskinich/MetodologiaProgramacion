@@ -1,7 +1,6 @@
 using IComparable;
 using PFactoryMethod.CreadorComparables;
-using Clases.DatosAzar;
-using Clases.LectorDeDatos;
+using ObtencionDeDatos;
 using Funciones;
 using IAlumnos;
 using IAlumnos.Regular;
@@ -14,13 +13,16 @@ namespace PFactoryMethod.CreadorAlumnos
 {
     public class CreadorAlumno : ICreadorComparable
     {
+        protected GeneradorDatosAzar datoAleatorio = new();
+        protected LectorDeDatos datoTeclado = new();
+
 
         public virtual Comparable CrearAleatorio(string opcion)
         {
-            int dni = GeneradorDatosAzar.NumeroAleatorio(10000);
+            int dni = datoAleatorio.ObtenerNumero(10000);
             string nombre = Helper.NombreAzar();
-            int legajo = GeneradorDatosAzar.NumeroAleatorio(10000);
-            float promedio = (float)GeneradorDatosAzar.NumeroAleatorio(11);
+            int legajo = datoAleatorio.ObtenerNumero(10000);
+            float promedio = (float)datoAleatorio.ObtenerNumero(11);
 
             IAlumno alum = null;
 
@@ -46,10 +48,10 @@ namespace PFactoryMethod.CreadorAlumnos
 
         public virtual Comparable CrearPorTeclado(string opcion)
         {
-            int dni = LectorDeDatos.NumeroPorTeclado();
-            string nombre = LectorDeDatos.StringPorTeclado();
-            int legajo = LectorDeDatos.NumeroPorTeclado();
-            float promedio = (float)LectorDeDatos.NumeroPorTeclado();
+            int dni = datoTeclado.ObtenerNumero(1000000);
+            string nombre = datoTeclado.ObtenerCadena(20);
+            int legajo = datoTeclado.ObtenerNumero(1000000);
+            float promedio = (float)datoTeclado.ObtenerNumero(11);
 
             IAlumno alum = null;
 

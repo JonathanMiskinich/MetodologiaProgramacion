@@ -1,12 +1,14 @@
-namespace Clases.DatosAzar
+
+namespace ObtencionDeDatos
 {
-    public static class GeneradorDatosAzar
+    public class GeneradorDatosAzar : BaseManejadorDatos
     {
-        public static int NumeroAleatorio(int max)
+        public override int ObtenerNumero(int max)
         {
             return new Random().Next(0, max);
         }
-        public static string StringAleatorio(int cant)
+
+        public override string ObtenerCadena(int cant)
         {
             string mensaje = "";
             for (int i = 0; i < cant; i++)
